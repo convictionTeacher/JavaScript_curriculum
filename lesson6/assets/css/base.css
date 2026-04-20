@@ -1,0 +1,12 @@
+/**
+ * JavaScript lesson6 baseCSS
+ */
+
+:root {
+  --color-primary: #7ab3d4;
+  --color-primary-light: #ddeef7;
+  --color-secondary: #6aa3c4;
+  --color-base-5: #5a93b4;
+  --color-base-10: #3a7399;
+  --color-shadow: #7ab3d44d;
+}

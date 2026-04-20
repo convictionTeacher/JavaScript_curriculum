@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript練習 - Lesson7</title>
+    <link rel="icon" href="../common/assets/image/favicon.ico" type="image/png" />
+    <link rel="stylesheet" href="../common/assets/css/reset.css" />
+    <link rel="stylesheet" href="../common/assets/css/base.css" />
+    <link rel="stylesheet" href="../common/assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="l-wrapper">
+      <header class="l-header">
+        <div class="p-headerTitle">
+          <span class="material-icons">school</span>
+          <h1 class="c-title-top">JavaScript Lesson7</h1>
+        </div>
+        <p class="c-title-sub">関数を定義して再利用可能なコードを書こう！</p>
+      </header>
+      <main class="l-main">
+
+        <!-- Step1 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step1: 関数の定義</p>
+              </div>
+              <span class="c-useCase">functionキーワードを使って、処理に名前をつけて再利用できる関数を定義します。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function greet() {<br />
+                    &nbsp;&nbsp;console.log("こんにちは！");<br />
+                    }
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="a" /> こんにちは！</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="b" /> greet</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="c" /> なにも表示されない</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="d" /> エラー</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--11">
+                    <span class="js-quiz-message--11 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--11 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--11 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「なにも表示されない」です。<br />
+                      関数は定義しただけでは実行されません。呼び出し（greet();）が必要です。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q1_1" data-step-question-id="11" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function showNum() {<br />
+                    &nbsp;&nbsp;console.log(42);<br />
+                    }<br />
+                    showNum();
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="a" /> "42"</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="b" /> 42</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="c" /> showNum</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--12">
+                    <span class="js-quiz-message--12 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--12 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--12 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「42」です。<br />
+                      showNum()と呼び出したことで関数が実行され、console.log(42)が動きます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q1_2" data-step-question-id="12" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 関数を定義するキーワードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  <label for="blank-11" class="c-label-input">関数を定義するキーワード</label>
+                  <input type="text" class="c-input js-blank--1" id="blank-11" placeholder="①" /> greet() {<br />
+                  &nbsp;&nbsp;console.log("こんにちは！");<br />
+                  }
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--11">
+                  <span class="js-blank-correct--11 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--11 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①function です。<br />
+                    functionキーワードの後に関数名・()・{}を書いて関数を定義します。
+                  </span>
+                </div>
+                <button data-blank-id="11" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: 関数内でコンソールに変数を表示するコードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function showScore() {<br />
+                  &nbsp;&nbsp;const score = 100;<br />
+                  &nbsp;&nbsp;console.log(<label for="blank-12" class="c-label-input">表示する変数名</label><input type="text" class="c-input js-blank--2" id="blank-12" placeholder="①" />);<br />
+                  }
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--12">
+                  <span class="js-blank-correct--12 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--12 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①score です。<br />
+                    関数内で定義した変数scoreをそのまま渡すことでコンソールに表示されます。
+                  </span>
+                </div>
+                <button data-blank-id="12" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q1" class="p-practice">
+              <h2 class="c-title-lesson">関数の定義の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__card js-message-s1">（関数を呼び出すと表示されます）</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S1-1</span>
+                <span class="u-flex-1">'function'キーワードを使って、コンソールに"Hello！"と出力する関数を定義し、呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S1-2</span>
+                <span class="u-flex-1">'function'キーワードを使って、'.js-message-s1'要素に"関数を定義しました！"を表示する関数を定義し、呼び出す。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step2 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step2: 関数の呼び出し</p>
+              </div>
+              <span class="c-useCase">定義した関数を好きなタイミングで呼び出して、処理を実行できるようになります。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz2"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank2"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task2"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz2">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function greet() {<br />
+                    &nbsp;&nbsp;console.log("こんにちは！");<br />
+                    }<br />
+                    greet();
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="a" /> greet</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="b" /> こんにちは！</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="c" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="d" /> なにも表示されない</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--21">
+                    <span class="js-quiz-message--21 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--21 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--21 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「こんにちは！」です。<br />
+                      greet()と書いて呼び出すことで関数が実行され、console.log("こんにちは！")が動きます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q2_1" data-step-question-id="21" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function add() {<br />
+                    &nbsp;&nbsp;return 10 + 5;<br />
+                    }<br />
+                    const result = add();<br />
+                    console.log(result);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="a" /> 10</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="b" /> 5</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="c" /> 15</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--22">
+                    <span class="js-quiz-message--22 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--22 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--22 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「15」です。<br />
+                      add()が10+5=15を返し、resultに代入されてコンソールに表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q2_2" data-step-question-id="22" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank2">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 関数を呼び出すコードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function showGreet() {<br />
+                  &nbsp;&nbsp;console.log("こんにちは！");<br />
+                  }<br />
+                  <label for="blank-21" class="c-label-input">呼び出す関数名</label>
+                  <input type="text" class="c-input js-blank--3" id="blank-21" placeholder="①" />();
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--21">
+                  <span class="js-blank-correct--21 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--21 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①showGreet です。<br />
+                    定義した関数名に()を付けることで関数を呼び出せます。
+                  </span>
+                </div>
+                <button data-blank-id="21" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: イベントリスナーに関数を渡すコードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  const btn = document.querySelector(".js-btn");<br />
+                  function showMsg() {<br />
+                  &nbsp;&nbsp;console.log("クリックされました");<br />
+                  }<br />
+                  btn.addEventListener("click", <label for="blank-22" class="c-label-input">渡す関数名</label><input type="text" class="c-input js-blank--4" id="blank-22" placeholder="①" />);
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--22">
+                  <span class="js-blank-correct--22 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--22 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①showMsg です。<br />
+                    ()なしで関数名だけ渡すと、クリック時に関数が実行されます。
+                  </span>
+                </div>
+                <button data-blank-id="22" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task2">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q2" class="p-practice">
+              <h2 class="c-title-lesson">関数の呼び出しの練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <button type="button" class="c-button-practice js-runBtn-s2">実行</button>
+                  <button type="button" class="c-button-practice js-resetBtn-s2">リセット</button>
+                </div>
+                <div class="p-practice__card js-display-s2">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S2-1</span>
+                <span class="u-flex-1">'.js-runBtn-s2'をクリックしたとき、コンソールに"実行しました！"と出力する関数`run`を定義して呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S2-2</span>
+                <span class="u-flex-1">'.js-resetBtn-s2'をクリックしたとき、'.js-display-s2'要素のテキストを"初期状態"にリセットする関数`resetDisplay`を定義して呼び出す。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step3 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step3: 引数あり関数</p>
+              </div>
+              <span class="c-useCase">関数に値を渡すことで、同じ処理をさまざまなデータに対して実行できます。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz3"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank3"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task3"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz3">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function greet(name) {<br />
+                    &nbsp;&nbsp;console.log("こんにちは、" + name + "さん！");<br />
+                    }<br />
+                    greet("田中");
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="a" /> こんにちは、nameさん！</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="b" /> こんにちは、田中さん！</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="c" /> 田中</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="d" /> エラー</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--31">
+                    <span class="js-quiz-message--31 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--31 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--31 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「こんにちは、田中さん！」です。<br />
+                      引数nameに"田中"が渡され、文字列と結合されて表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q3_1" data-step-question-id="31" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function double(num) {<br />
+                    &nbsp;&nbsp;console.log(num * 2);<br />
+                    }<br />
+                    double(5);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="a" /> 5</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="b" /> 10</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="c" /> "num * 2"</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--32">
+                    <span class="js-quiz-message--32 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--32 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--32 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「10」です。<br />
+                      引数numに5が渡され、5×2=10が計算されてコンソールに表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q3_2" data-step-question-id="32" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank3">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 引数名の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function greet(<label for="blank-31" class="c-label-input">引数名</label><input type="text" class="c-input js-blank--5" id="blank-31" placeholder="①" />) {<br />
+                  &nbsp;&nbsp;console.log("こんにちは、" + name + "さん！");<br />
+                  }<br />
+                  greet("山田");
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--31">
+                  <span class="js-blank-correct--31 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--31 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①name です。<br />
+                    ()の中に書いた名前が引数名となり、関数内でその名前で値を使えます。
+                  </span>
+                </div>
+                <button data-blank-id="31" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: 引数のプロパティを取得するコードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function showLength(text) {<br />
+                  &nbsp;&nbsp;console.log(text.<label for="blank-32" class="c-label-input">文字数を取得するプロパティ名</label><input type="text" class="c-input js-blank--6" id="blank-32" placeholder="①" />);<br />
+                  }<br />
+                  showLength("hello");
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--32">
+                  <span class="js-blank-correct--32 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--32 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①length です。<br />
+                    文字列のlengthプロパティで文字数を取得できます。"hello"は5文字なので5が表示されます。
+                  </span>
+                </div>
+                <button data-blank-id="32" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task3">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q3" class="p-practice">
+              <h2 class="c-title-lesson">引数あり関数の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <input type="text" class="c-input js-nameInput-s3" placeholder="名前を入力" />
+                  <button type="button" class="c-button-practice js-greetBtn-s3">挨拶する</button>
+                </div>
+                <div class="p-practice__card js-greeting-s3">ここに表示されます</div>
+                <div class="p-practice__item u-gap-8">
+                  <input type="number" class="c-input js-numInput-s3" placeholder="数値を入力" />
+                  <button type="button" class="c-button-practice js-calcBtn-s3">2倍を計算</button>
+                </div>
+                <div class="p-practice__card js-doubleResult-s3">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S3-1</span>
+                <span class="u-flex-1">名前を受け取って'.js-greeting-s3'に"こんにちは、[名前]さん！"と表示する関数を定義する。'.js-greetBtn-s3'をクリックしたとき、'.js-nameInput-s3'の値を引数として渡して呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S3-2</span>
+                <span class="u-flex-1">数値を受け取って2倍した結果を'.js-doubleResult-s3'に表示する関数を定義する。'.js-calcBtn-s3'をクリックしたとき、'.js-numInput-s3'の値を引数として渡して呼び出す。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step4 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step4: 戻り値（return）</p>
+              </div>
+              <span class="c-useCase">returnを使って関数の処理結果を呼び出し元に返し、その値をさらに活用できます。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz4"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank4"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task4"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz4">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function add(a, b) {<br />
+                    &nbsp;&nbsp;return a + b;<br />
+                    }<br />
+                    console.log(add(3, 4));
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="a" /> 3</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="b" /> 4</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="c" /> 7</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--41">
+                    <span class="js-quiz-message--41 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--41 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--41 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「7」です。<br />
+                      add(3, 4)はa=3、b=4を受け取り3+4=7をreturnで返します。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q4_1" data-step-question-id="41" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function getMessage() {<br />
+                    &nbsp;&nbsp;return "完了しました";<br />
+                    }<br />
+                    const msg = getMessage();<br />
+                    console.log(msg);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="a" /> getMessage()</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="b" /> 完了しました</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="c" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="d" /> エラー</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--42">
+                    <span class="js-quiz-message--42 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--42 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--42 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「完了しました」です。<br />
+                      関数の戻り値がmsgに代入され、コンソールに表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q4_2" data-step-question-id="42" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank4">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 値を返すキーワードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function double(n) {<br />
+                  &nbsp;&nbsp;<label for="blank-41" class="c-label-input">値を返すキーワード</label>
+                  <input type="text" class="c-input js-blank--7" id="blank-41" placeholder="①" /> n * 2;<br />
+                  }<br />
+                  console.log(double(5));
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--41">
+                  <span class="js-blank-correct--41 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--41 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①return です。<br />
+                    returnキーワードの後に書いた値が呼び出し元に返されます。
+                  </span>
+                </div>
+                <button data-blank-id="41" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: 戻り値を受け取った変数の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function calcTax(price) {<br />
+                  &nbsp;&nbsp;return price * 1.1;<br />
+                  }<br />
+                  const result = calcTax(100);<br />
+                  console.log(<label for="blank-42" class="c-label-input">戻り値を受け取った変数名</label><input type="text" class="c-input js-blank--8" id="blank-42" placeholder="①" />);
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--42">
+                  <span class="js-blank-correct--42 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--42 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①result です。<br />
+                    calcTax(100)の戻り値110がresultに代入されているため、resultをログに渡します。
+                  </span>
+                </div>
+                <button data-blank-id="42" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task4">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q4" class="p-practice">
+              <h2 class="c-title-lesson">戻り値の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <input type="number" class="c-input js-numA-s4" placeholder="数値A" />
+                  <input type="number" class="c-input js-numB-s4" placeholder="数値B" />
+                  <button type="button" class="c-button-practice js-sumBtn-s4">合計を計算</button>
+                </div>
+                <div class="p-practice__card js-sumResult-s4">ここに表示されます</div>
+                <div class="p-practice__item u-gap-8">
+                  <input type="number" class="c-input js-priceInput-s4" placeholder="税抜価格" />
+                  <button type="button" class="c-button-practice js-taxBtn-s4">税込を計算</button>
+                </div>
+                <div class="p-practice__card js-taxResult-s4">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S4-1</span>
+                <span class="u-flex-1">2つの数値を受け取って合計を返す関数を定義する。'.js-sumBtn-s4'をクリックしたとき、'.js-numA-s4'と'.js-numB-s4'の値を引数として渡して結果を'.js-sumResult-s4'に表示する。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S4-2</span>
+                <span class="u-flex-1">価格（税抜）を受け取って税込価格（1.1倍）を返す関数を定義する。'.js-taxBtn-s4'をクリックしたとき、'.js-priceInput-s4'の値を引数として渡して結果を'.js-taxResult-s4'に"X円"の形式で表示する。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step5 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step5: 複数引数</p>
+              </div>
+              <span class="c-useCase">関数に複数の値を渡すことで、より複雑な処理を柔軟に実装できます。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz5"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank5"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task5"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz5">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function introduce(name, age) {<br />
+                    &nbsp;&nbsp;console.log(name + "は" + age + "歳です。");<br />
+                    }<br />
+                    introduce("田中", 25);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="a" /> 田中25</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="b" /> 田中は25歳です。</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="c" /> nameはage歳です。</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--51">
+                    <span class="js-quiz-message--51 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--51 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--51 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「田中は25歳です。」です。<br />
+                      nameに"田中"、ageに25が渡されて文字列が組み立てられます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q5_1" data-step-question-id="51" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    function max(a, b) {<br />
+                    &nbsp;&nbsp;if (a > b) return a;<br />
+                    &nbsp;&nbsp;return b;<br />
+                    }<br />
+                    console.log(max(8, 3));
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="a" /> 3</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="b" /> 8</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="c" /> true</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="d" /> 11</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--52">
+                    <span class="js-quiz-message--52 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--52 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--52 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「8」です。<br />
+                      a=8、b=3でa>bがtrueになるため、returnでaの8が返されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q5_2" data-step-question-id="52" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank5">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 2つ目の引数名の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function greet(name, <label for="blank-51" class="c-label-input">2つ目の引数名</label><input type="text" class="c-input js-blank--9" id="blank-51" placeholder="①" />) {<br />
+                  &nbsp;&nbsp;console.log(name + "さん、" + time + "！");<br />
+                  }<br />
+                  greet("田中", "おはようございます");
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--51">
+                  <span class="js-blank-correct--51 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--51 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①time です。<br />
+                    2つ目の引数timeに"おはようございます"が渡されて使われます。
+                  </span>
+                </div>
+                <button data-blank-id="51" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: 掛け算の演算子の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  function calcRect(width, height) {<br />
+                  &nbsp;&nbsp;return width <label for="blank-52" class="c-label-input">演算子</label><input type="text" class="c-input js-blank--10" id="blank-52" placeholder="①" /> height;<br />
+                  }<br />
+                  console.log(calcRect(4, 5));
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--52">
+                  <span class="js-blank-correct--52 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--52 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①* です。<br />
+                    *（アスタリスク）は掛け算の演算子です。4×5=20が返されます。
+                  </span>
+                </div>
+                <button data-blank-id="52" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task5">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q5" class="p-practice">
+              <h2 class="c-title-lesson">複数引数の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <input type="text" class="c-input js-nameInput-s5" placeholder="名前" />
+                  <input type="number" class="c-input js-ageInput-s5" placeholder="年齢" />
+                  <button type="button" class="c-button-practice js-profileBtn-s5">プロフィール表示</button>
+                </div>
+                <div class="p-practice__card js-profileResult-s5">ここに表示されます</div>
+                <div class="p-practice__item u-gap-8">
+                  <input type="number" class="c-input js-numX-s5" placeholder="数値X" />
+                  <input type="number" class="c-input js-numY-s5" placeholder="数値Y" />
+                  <button type="button" class="c-button-practice js-maxBtn-s5">大きい方を表示</button>
+                </div>
+                <div class="p-practice__card js-maxResult-s5">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S5-1</span>
+                <span class="u-flex-1">名前と年齢を受け取り'.js-profileResult-s5'に"名前：[名前]、年齢：[年齢]歳"と表示する関数を定義する。'.js-profileBtn-s5'をクリックしたとき、'.js-nameInput-s5'と'.js-ageInput-s5'の値を引数として渡して呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S5-2</span>
+                <span class="u-flex-1">2つの数値を受け取って大きい方を返す関数を定義する。'.js-maxBtn-s5'をクリックしたとき、'.js-numX-s5'と'.js-numY-s5'の値を引数として渡して'.js-maxResult-s5'に表示する。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step6 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step6: 関数式</p>
+              </div>
+              <span class="c-useCase">関数を変数に代入することで、データと同じように関数を扱えるようになります。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz6"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank6"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task6"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz6">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    const greet = function() {<br />
+                    &nbsp;&nbsp;console.log("こんにちは！");<br />
+                    };<br />
+                    greet();
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="a" /> function</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="b" /> こんにちは！</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="c" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="d" /> エラー</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--61">
+                    <span class="js-quiz-message--61 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--61 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--61 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「こんにちは！」です。<br />
+                      変数greetに関数が代入されており、greet()で呼び出せます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q6_1" data-step-question-id="61" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    const add = function(a, b) {<br />
+                    &nbsp;&nbsp;return a + b;<br />
+                    };<br />
+                    console.log(add(2, 3));
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" /> 2</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="b" /> 3</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="c" /> 5</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="d" /> "a + b"</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--62">
+                    <span class="js-quiz-message--62 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--62 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--62 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「5」です。<br />
+                      add(2, 3)でa=2、b=3が渡され、2+3=5が返されてコンソールに表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q6_2" data-step-question-id="62" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank6">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: 関数式のキーワードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  const sayHi = <label for="blank-61" class="c-label-input">関数定義のキーワード</label><input type="text" class="c-input js-blank--11" id="blank-61" placeholder="①" />(name) {<br />
+                  &nbsp;&nbsp;console.log("Hi, " + name);<br />
+                  };<br />
+                  sayHi("Taro");
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--61">
+                  <span class="js-blank-correct--61 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--61 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①function です。<br />
+                    const 変数名 = function() { }; の形が関数式です。
+                  </span>
+                </div>
+                <button data-blank-id="61" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: 関数式を呼び出すコードの空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  const double = function(n) {<br />
+                  &nbsp;&nbsp;return n * 2;<br />
+                  };<br />
+                  const result = <label for="blank-62" class="c-label-input">呼び出す関数式の変数名</label><input type="text" class="c-input js-blank--12" id="blank-62" placeholder="①" />(4);<br />
+                  console.log(result);
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--62">
+                  <span class="js-blank-correct--62 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--62 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①double です。<br />
+                    変数doubleに関数が代入されているため、double(4)で呼び出せます。
+                  </span>
+                </div>
+                <button data-blank-id="62" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task6">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q6" class="p-practice">
+              <h2 class="c-title-lesson">関数式の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <input type="text" class="c-input js-upperInput-s6" placeholder="文字を入力" />
+                  <button type="button" class="c-button-practice js-upperBtn-s6">大文字に変換</button>
+                </div>
+                <div class="p-practice__card js-upperResult-s6">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S6-1</span>
+                <span class="u-flex-1">関数式を使って、コンソールに"関数式で定義しました！"を出力する関数を変数`showMsg`に代入し、呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S6-2</span>
+                <span class="u-flex-1">関数式を使って、入力文字列を大文字に変換して'.js-upperResult-s6'に表示する関数を変数`toUpper`に代入する。'.js-upperBtn-s6'をクリックしたとき、'.js-upperInput-s6'の値を引数として渡して呼び出す。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step7 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step7: アロー関数</p>
+              </div>
+              <span class="c-useCase">関数式をより短く書けるアロー関数の書き方に慣れ、モダンなコードを書けるようになります。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz7"><span class="material-icons">live_help</span> 出力予想</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank7"><span class="material-icons">build</span> コード補完</button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task7"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz7">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    const greet = () => {<br />
+                    &nbsp;&nbsp;console.log("こんにちは！");<br />
+                    };<br />
+                    greet();
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="a" /> エラー</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="b" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="c" /> こんにちは！</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="d" /> () =></label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--71">
+                    <span class="js-quiz-message--71 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--71 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--71 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「こんにちは！」です。<br />
+                      () => { }はアロー関数の書き方で、greet()で呼び出せます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q7_1" data-step-question-id="71" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code -blank">
+                    const double = (n) => n * 2;<br />
+                    console.log(double(6));
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="a" /> 6</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="b" /> 2</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="c" /> "n * 2"</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="d" /> 12</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--72">
+                    <span class="js-quiz-message--72 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--72 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--72 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「12」です。<br />
+                      (n) => n * 2 は省略形で、n * 2の計算結果を自動的に返します。6×2=12が表示されます。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q7_2" data-step-question-id="72" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank7">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q1: アロー関数の記号の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  const greet = () <label for="blank-71" class="c-label-input">アロー記号</label><input type="text" class="c-input js-blank--13" id="blank-71" placeholder="①" /> {<br />
+                  &nbsp;&nbsp;console.log("ハロー！");<br />
+                  };<br />
+                  greet();
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--71">
+                  <span class="js-blank-correct--71 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--71 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①=&gt; です。<br />
+                    () => { }の形がアロー関数です。=&gt;（イコールと大なり記号）を使います。
+                  </span>
+                </div>
+                <button data-blank-id="71" class="c-btn">答えを確認</button>
+              </div>
+              <div class="p-blank__item js-blankItem">
+                <h4 class="c-title-question">Q2: アロー関数の引数名の空欄を埋めてください。</h4>
+                <div class="c-code -blank">
+                  const square = (<label for="blank-72" class="c-label-input">引数名</label><input type="text" class="c-input js-blank--14" id="blank-72" placeholder="①" />) => n * n;<br />
+                  console.log(square(4));
+                </div>
+                <div class="p-result u-mb-10 js-blank-result--72">
+                  <span class="js-blank-correct--72 u-color-normal u-hide">〇 正解！</span>
+                  <span class="js-blank-incorrect--72 u-color-warning u-hide">
+                    ✕ 不正解。<br />
+                    正解は ①n です。<br />
+                    引数nに4が渡され、n*n=16が返されます。
+                  </span>
+                </div>
+                <button data-blank-id="72" class="c-btn">答えを確認</button>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task7">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q7" class="p-practice">
+              <h2 class="c-title-lesson">アロー関数の練習</h2>
+              <div class="p-practice__inner">
+                <div class="p-practice__item u-gap-8">
+                  <input type="number" class="c-input js-tripleInput-s7" placeholder="数値を入力" />
+                  <button type="button" class="c-button-practice js-tripleBtn-s7">3倍を計算</button>
+                </div>
+                <div class="p-practice__card js-tripleResult-s7">ここに表示されます</div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S7-1</span>
+                <span class="u-flex-1">アロー関数を使って、コンソールに"アロー関数を使いました！"を出力する関数を変数`sayArrow`に代入し、呼び出す。</span>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S7-2</span>
+                <span class="u-flex-1">アロー関数を使って、数値を受け取って3倍した結果を'.js-tripleResult-s7'に表示する関数を変数`triple`に代入する。'.js-tripleBtn-s7'をクリックしたとき、'.js-tripleInput-s7'の値を引数として渡して呼び出す。</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step8: 総合演習 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <div class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step8: コールバック関数（総合演習）</p>
+              </div>
+              <span class="c-useCase">これまで学んだ関数の書き方を活かして、配列メソッドにアロー関数を渡す実践的な処理を実装します。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="task8"><span class="material-icons">edit</span> 提出課題</button>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="task8">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div class="p-task">
+
+              <!-- 課題1 -->
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S8-1</span>
+                <div class="p-task__contents u-flex-1">
+                  <strong>メンバー一覧表示</strong>
+                  <div id="q8_1" class="p-practice u-mt-8">
+                    <h2 class="c-title-lesson">メンバー一覧</h2>
+                    <div class="p-practice__inner">
+                      <button type="button" class="c-button-practice js-memberBtn-s8">一覧を表示</button>
+                      <div class="js-memberList-s8"></div>
+                    </div>
+                  </div>
+                  <p>
+                    以下の配列をforEachとアロー関数を使ってループし、<br />
+                    '.js-memberBtn-s8'をクリックしたとき各メンバーを'.js-memberList-s8'に一覧表示する。<br />
+                    const members = ["田中", "鈴木", "佐藤", "高橋", "伊藤"];
+                  </p>
+                </div>
+              </div>
+
+              <!-- 課題2 -->
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S8-2</span>
+                <div class="p-task__contents u-flex-1">
+                  <strong>10%引きセール価格表示</strong>
+                  <div id="q8_2" class="p-practice u-mt-8">
+                    <h2 class="c-title-lesson">セール価格一覧</h2>
+                    <div class="p-practice__inner">
+                      <button type="button" class="c-button-practice js-saleBtn-s8">セール価格を表示</button>
+                      <div class="js-saleList-s8"></div>
+                    </div>
+                  </div>
+                  <p>
+                    以下の配列をmapとアロー関数を使って各価格を10%引きに変換し、<br />
+                    '.js-saleBtn-s8'をクリックしたとき'.js-saleList-s8'に「商品名：価格円」の形式で表示する。<br />
+                    const items = [{ name: "コーヒー", price: 500 }, { name: "ケーキ", price: 800 }, { name: "サンドイッチ", price: 650 }];
+                  </p>
+                </div>
+              </div>
+
+              <!-- 課題3 -->
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S8-3</span>
+                <div class="p-task__contents u-flex-1">
+                  <strong>合格者絞り込み</strong>
+                  <div id="q8_3" class="p-practice u-mt-8">
+                    <h2 class="c-title-lesson">合格者一覧</h2>
+                    <div class="p-practice__inner">
+                      <button type="button" class="c-button-practice js-passBtn-s8">合格者を表示</button>
+                      <div class="js-passList-s8"></div>
+                    </div>
+                  </div>
+                  <p>
+                    以下の配列をfilterとアロー関数を使って60点以上の生徒を絞り込み、<br />
+                    '.js-passBtn-s8'をクリックしたとき'.js-passList-s8'に「名前（点数点）」の形式で表示する。<br />
+                    const students = [{ name: "田中", score: 72 }, { name: "鈴木", score: 45 },<br />
+                    { name: "佐藤", score: 88 }, { name: "高橋", score: 55 }, { name: "伊藤", score: 91 }];
+                  </p>
+                </div>
+              </div>
+
+              <!-- 課題4 -->
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L7-S8-4</span>
+                <div class="p-task__contents u-flex-1">
+                  <strong>偶数判定と一覧表示</strong>
+                  <div id="q8_4" class="p-practice u-mt-8">
+                    <h2 class="c-title-lesson">偶数一覧（1〜20）</h2>
+                    <div class="p-practice__inner">
+                      <button type="button" class="c-button-practice js-evenBtn-s8">偶数を表示</button>
+                      <div class="js-evenList-s8"></div>
+                    </div>
+                  </div>
+                  <p>
+                    アロー関数を使って、数値が偶数かどうかを返す関数`isEven`を定義する。<br />
+                    '.js-evenBtn-s8'をクリックしたとき、1から20までの数をループし、<br />
+                    `isEven`がtrueを返す数のみを'.js-evenList-s8'に表示する。
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <footer class="l-footer">
+        <span class="material-icons">school</span>
+        <p>JavaScriptCurriculum Lesson7 | 関数を定義して再利用可能なコードを書こう！</p>
+      </footer>
+    </div>
+    <button class="c-floatingBtn js-floating">
+      <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+    <div class="c-copy js-toast"></div>
+    <script src="../common/assets/js/config.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/curriculum.js" defer></script>
+    <script src="assets/js/sample.js" defer></script>
+    <!-- 解答例（削除可能） -->
+  </body>
+</html>
