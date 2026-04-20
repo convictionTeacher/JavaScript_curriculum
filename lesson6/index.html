@@ -475,11 +475,11 @@
               <h2 class="c-title-lesson">配列操作の練習</h2>
               <div class="p-practice__inner">
                 <div class="js-spliceList-s3"></div>
-                <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
-                  <input type="number" class="c-input js-deleteIndex-s3" placeholder="削除インデックス" style="width:140px;" />
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px">
+                  <input type="number" class="c-input js-deleteIndex-s3" placeholder="削除インデックス" style="width: 140px" />
                   <button type="button" class="c-button-practice js-deleteBtn-s3">削除</button>
-                  <input type="number" class="c-input js-insertIndex-s3" placeholder="挿入インデックス" style="width:140px;" />
-                  <input type="text" class="c-input js-insertInput-s3" placeholder="挿入する値" style="width:120px;" />
+                  <input type="number" class="c-input js-insertIndex-s3" placeholder="挿入インデックス" style="width: 140px" />
+                  <input type="text" class="c-input js-insertInput-s3" placeholder="挿入する値" style="width: 120px" />
                   <button type="button" class="c-button-practice js-insertBtn-s3">挿入</button>
                 </div>
               </div>
@@ -487,7 +487,10 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S3-1</span>
-                <span class="u-flex-1">'.js-deleteBtn-s3'をクリックしたとき、'.js-deleteIndex-s3'に入力されたインデックスの要素をspliceで削除し、'.js-spliceList-s3'の表示を更新する。初期配列：["月曜", "火曜", "水曜", "木曜", "金曜"]</span>
+                <span class="u-flex-1"
+                  >'.js-deleteBtn-s3'をクリックしたとき、'.js-deleteIndex-s3'に入力されたインデックスの要素をspliceで削除し、'.js-spliceList-s3'の表示を更新する。初期配列：["月曜", "火曜", "水曜",
+                  "木曜", "金曜"]</span
+                >
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S3-2</span>
@@ -595,8 +598,10 @@
                   <h4 class="c-title-question">Q1: for文で配列の全要素をコンソールに表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
                     const names = ["田中", "鈴木", "佐藤"];<br />
-                    for (let i = 0; i &lt; names.<label for="blank-411" class="c-label-input">要素数を取得するプロパティ</label><input type="text" class="c-input js-blank--41-1" id="blank-411" placeholder="①" />; i++) {<br />
-                    &nbsp;&nbsp;console.log(names[<label for="blank-412" class="c-label-input">インデックス変数</label><input type="text" class="c-input js-blank--41-2" id="blank-412" placeholder="②" />]);<br />
+                    for (let i = 0; i &lt; names.<label for="blank-411" class="c-label-input">要素数を取得するプロパティ</label
+                    ><input type="text" class="c-input js-blank--41-1" id="blank-411" placeholder="①" />; i++) {<br />
+                    &nbsp;&nbsp;console.log(names[<label for="blank-412" class="c-label-input">インデックス変数</label
+                    ><input type="text" class="c-input js-blank--41-2" id="blank-412" placeholder="②" />]);<br />
                     }
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--41">
@@ -653,7 +658,10 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S4-1</span>
-                <span class="u-flex-1">'.js-loopBtn-s4'をクリックしたとき、for文を使って以下の配列を順番にループし、各要素を'.js-loopResult-s4'に追加表示する。const members = ["山田", "田中", "鈴木", "佐藤", "高橋"];</span>
+                <span class="u-flex-1"
+                  >'.js-loopBtn-s4'をクリックしたとき、for文を使って以下の配列を順番にループし、各要素を'.js-loopResult-s4'に追加表示する。const members = ["山田", "田中", "鈴木", "佐藤",
+                  "高橋"];</span
+                >
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S4-2</span>
@@ -777,7 +785,8 @@
                   <h4 class="c-title-question">Q2: 条件に合う要素をすべて取り出すコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
                     const prices = [500, 1200, 300, 800, 2000];<br />
-                    const expensive = prices.<label for="blank-521" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--52-1" id="blank-521" placeholder="①" />(function(price) {<br />
+                    const expensive = prices.<label for="blank-521" class="c-label-input">メソッド名</label
+                    ><input type="text" class="c-input js-blank--52-1" id="blank-521" placeholder="①" />(function(price) {<br />
                     &nbsp;&nbsp;return price &gt;= 1000;<br />
                     });<br />
                     console.log(expensive);
@@ -818,11 +827,17 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S5-1</span>
-                <span class="u-flex-1">'.js-searchBtn-s5'をクリックしたとき、'.js-searchInput-s5'の値が配列に含まれるかincludesで確認し、'.js-searchResult-s5'に"含まれています"または"含まれていません"と表示する。const vegetables = ["キャベツ", "にんじん", "たまねぎ", "じゃがいも", "ほうれん草"];</span>
+                <span class="u-flex-1"
+                  >'.js-searchBtn-s5'をクリックしたとき、'.js-searchInput-s5'の値が配列に含まれるかincludesで確認し、'.js-searchResult-s5'に"含まれています"または"含まれていません"と表示する。const
+                  vegetables = ["キャベツ", "にんじん", "たまねぎ", "じゃがいも", "ほうれん草"];</span
+                >
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S5-2</span>
-                <span class="u-flex-1">'.js-filterBtn-s5'をクリックしたとき、以下の配列から価格が1000円以上の商品をfilterで絞り込み、商品名を'.js-filterResult-s5'に表示する。const products = [{ name: "ノートPC", price: 89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "ケーブル", price: 800 }, { name: "モニター", price: 45000 }];</span>
+                <span class="u-flex-1"
+                  >'.js-filterBtn-s5'をクリックしたとき、以下の配列から価格が1000円以上の商品をfilterで絞り込み、商品名を'.js-filterResult-s5'に表示する。const products = [{ name: "ノートPC", price:
+                  89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "ケーブル", price: 800 }, { name: "モニター", price: 45000 }];</span
+                >
               </div>
             </div>
           </div>
@@ -928,7 +943,8 @@
                   <h4 class="c-title-question">Q1: mapで各要素を変換するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
                     const prices = [100, 200, 300];<br />
-                    const taxed = prices.<label for="blank-611" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--61-1" id="blank-611" placeholder="①" />(function(price) {<br />
+                    const taxed = prices.<label for="blank-611" class="c-label-input">メソッド名</label
+                    ><input type="text" class="c-input js-blank--61-1" id="blank-611" placeholder="①" />(function(price) {<br />
                     &nbsp;&nbsp;return price * 1.1;<br />
                     });<br />
                     console.log(taxed[0]);
@@ -988,11 +1004,17 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S6-1</span>
-                <span class="u-flex-1">'.js-mapBtn-s6'をクリックしたとき、以下の配列をmapで変換して各価格を1.1倍（税込み）にし、'.js-mapResult-s6'に「商品名：税込価格円」の形式で表示する。const goods = [{ name: "コーヒー", price: 500 }, { name: "サンドイッチ", price: 650 }, { name: "サラダ", price: 480 }];</span>
+                <span class="u-flex-1"
+                  >'.js-mapBtn-s6'をクリックしたとき、以下の配列をmapで変換して各価格を1.1倍（税込み）にし、'.js-mapResult-s6'に「商品名：税込価格円」の形式で表示する。const goods = [{ name:
+                  "コーヒー", price: 500 }, { name: "サンドイッチ", price: 650 }, { name: "サラダ", price: 480 }];</span
+                >
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S6-2</span>
-                <span class="u-flex-1">'.js-labelBtn-s6'をクリックしたとき、以下の配列をmapで変換して各要素に"【完了】"を先頭に付けた新しい配列を作り、'.js-labelResult-s6'に一覧表示する。const tasks = ["資料作成", "メール返信", "打ち合わせ", "報告書提出"];</span>
+                <span class="u-flex-1"
+                  >'.js-labelBtn-s6'をクリックしたとき、以下の配列をmapで変換して各要素に"【完了】"を先頭に付けた新しい配列を作り、'.js-labelResult-s6'に一覧表示する。const tasks = ["資料作成",
+                  "メール返信", "打ち合わせ", "報告書提出"];</span
+                >
               </div>
             </div>
           </div>
@@ -1150,11 +1172,16 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S7-1</span>
-                <span class="u-flex-1">'.js-joinBtn-s7'をクリックしたとき、以下の配列をjoinで「 / 」区切りの文字列に変換して'.js-joinResult-s7'に表示する。const breadcrumb = ["ホーム", "カテゴリ", "商品一覧", "商品詳細"];</span>
+                <span class="u-flex-1"
+                  >'.js-joinBtn-s7'をクリックしたとき、以下の配列をjoinで「 / 」区切りの文字列に変換して'.js-joinResult-s7'に表示する。const breadcrumb = ["ホーム", "カテゴリ", "商品一覧",
+                  "商品詳細"];</span
+                >
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S7-2</span>
-                <span class="u-flex-1">'.js-splitBtn-s7'をクリックしたとき、'.js-splitInput-s7'に入力されたカンマ区切りの文字列をsplitで配列に変換して、各要素を'.js-splitResult-s7'にリスト表示する。</span>
+                <span class="u-flex-1"
+                  >'.js-splitBtn-s7'をクリックしたとき、'.js-splitInput-s7'に入力されたカンマ区切りの文字列をsplitで配列に変換して、各要素を'.js-splitResult-s7'にリスト表示する。</span
+                >
               </div>
             </div>
           </div>
@@ -1240,7 +1267,8 @@
                   </div>
                 </div>
                 <p>
-                  const items = [{ name: "ノートPC", price: 89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "モニター", price: 45000 }, { name: "スピーカー", price: 12000 }]; を使用してください。<br />
+                  const items = [{ name: "ノートPC", price: 89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "モニター", price: 45000 }, { name: "スピーカー",
+                  price: 12000 }]; を使用してください。<br />
                   '.js-calcBtn-s8'をクリックしたとき、forEachで配列を処理して<br />
                   ・合計金額を'.js-totalPrice-s8'に「合計：X円」と表示する。<br />
                   ・最も高い商品名と価格を'.js-maxPrice-s8'に「最高額：商品名（X円）」と表示する。
@@ -1282,7 +1310,5 @@
     <script src="../common/assets/js/config.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/curriculum.js"></script>
-    <script src="assets/js/sample.js"></script>
-    <!-- 解答例（削除可能） -->
   </body>
 </html>
