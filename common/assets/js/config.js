@@ -85,14 +85,14 @@ function checkBlank(stepQuestionId) {
   if (correctSpan) correctSpan.classList.add("u-hide");
   if (incorrectSpan) incorrectSpan.classList.add("u-hide");
 
-  // 入力値を取得
+  // 入力値を取得（スペースを除去しない - 前後のスペースは不正解扱い）
   const userAnswers = inputs.map((selector) => {
     const element = document.querySelector(selector);
-    return element ? element.value.trim() : "";
+    return element ? element.value : "";
   });
 
-  // 空欄チェック
-  if (userAnswers.some((answer) => answer === "")) {
+  // 空欄チェック（スペースのみも空欄扱い）
+  if (userAnswers.some((answer) => answer.trim() === "")) {
     if (incorrectSpan) incorrectSpan.classList.remove("u-hide");
     return;
   }

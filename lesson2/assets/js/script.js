@@ -34,14 +34,14 @@ window.QUIZ_ANSWERS = {
  * @type {Object.<string, {inputs: string[], answers: string[], validation: string}>}
  */
 window.BLANK_ANSWERS = {
-  11: { inputs: [".js-blank--1", ".js-blank--2", ".js-blank--3"], answers: ["querySelector", '"', '"'], validation: "flexible_quote" },
+  11: { inputs: [".js-blank--1", ".js-blank--2"], answers: ["querySelector", "#title"], validation: "default" },
   12: { inputs: [".js-blank--4", ".js-blank--5"], answers: ["button", "querySelector"], validation: "default" },
   21: { inputs: [".js-blank--7", ".js-blank--8"], answers: ["querySelector", "innerHTML", "textContent"], validation: "multiple_valid_second" },
   22: { inputs: [".js-blank--9", ".js-blank--10"], answers: ["querySelector", "textContent", "innerHTML"], validation: "multiple_valid_second" },
   31: { inputs: [".js-blank--11", ".js-blank--12"], answers: ["getElementsByClassName", "setAttribute"], validation: "default" },
-  32: { inputs: [".js-blank--13", ".js-blank--14", ".js-blank--15", ".js-blank--16"], answers: ["target", "_blank", "setAttribute", "getAttribute"], validation: "default" },
+  32: { inputs: [".js-blank--15", ".js-blank--16"], answers: ["setAttribute", "getAttribute"], validation: "default" },
   41: { inputs: [".js-blank--19", ".js-blank--20"], answers: ["add", "className", "classList"], validation: "multiple_valid_second" },
-  42: { inputs: [".js-blank--21", ".js-blank--22", ".js-blank--23"], answers: ["value", "classList", "contains"], validation: "default" },
+  42: { inputs: [".js-blank--22", ".js-blank--23"], answers: ["classList", "contains"], validation: "default" },
   51: { inputs: [".js-blank--26", ".js-blank--27"], answers: ["createElement", "append", "appendChild"], validation: "multiple_valid_second" },
   52: { inputs: [".js-blank--30", ".js-blank--31"], answers: ["1", "remove"], validation: "default" },
   61: { inputs: [".js-blank--28", ".js-blank--29"], answers: ["1", "checked"], validation: "default" },

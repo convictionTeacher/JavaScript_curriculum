@@ -132,6 +132,22 @@ JavaScript Curriculum Common StyleCSS
   user-select: none;
 }
 
+.c-tag:hover {
+  background: var(--color-secondary);
+}
+
+.c-tag.-point {
+  background: var(--color-gray-18);
+  color: var(--color-gray-2);
+  font-weight: 400;
+  font-family: var(--font-family);
+  display: inline-block;
+}
+
+.c-tag.-point:hover {
+  background: var(--color-gray-18);
+}
+
 .c-floatingBtn {
   position: fixed;
   bottom: 30px;
@@ -255,10 +271,6 @@ JavaScript Curriculum Common StyleCSS
   color: var(--color-gray-30);
   box-shadow: 0 2px 8px var(--color-shadow);
   transform: translateY(-1px);
-}
-
-.c-tag:hover {
-  background: var(--color-secondary);
 }
 
 .c-text-lesson {
@@ -870,6 +882,10 @@ JavaScript Curriculum Common StyleCSS
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.p-section__title--top p {
+  font-size: var(--size-xl);
 }
 
 .p-colorBox {

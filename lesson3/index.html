@@ -25,10 +25,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step1: イベント登録</p>
-              </div>
+              </h2>
               <span class="c-useCase">ユーザーが要素をクリック時にプログラムで反応して処理を実行します。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5098258" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -172,17 +172,17 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S1-1</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   '.js-click-s1'要素にマウスがのったときに発火するイベントを追加する。<br />
                   マウスがのった時に'.js-display-s1'要素のテキストを"ファイルを選択しました。"に変更する。
-                </span>
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S1-2</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   '.js-click-s1'要素にアロー関数を使用し、ダブルクリックイベントを追加する。<br />
                   ダブルクリック時に'.js-display-s1'要素のテキストを"ファイルを開きました。"に変更する。
-                </span>
+                </p>
               </div>
             </div>
           </div>
@@ -191,10 +191,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step2: イベント属性</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの要素にイベントを設定して、ユーザーの操作に反応してプログラムを実行します。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -287,10 +287,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step3: イベントの種類</p>
-              </div>
+              </h2>
               <span class="c-useCase">クリックや入力など、ユーザーの操作やブラウザの動きに応じてプログラムを反応させるパターンを分けています。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -440,11 +440,15 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S3-1</span>
-                <span class="u-flex-1">'.js-input-s3'要素に文字を入力したら、その内容を'.js-message-s3'要素のテキストにリアルタイムで反映する。</span>
+                <p class="u-flex-1">'.js-input-s3'要素に文字を入力したら、その内容を'.js-message-s3'要素のテキストにリアルタイムで反映する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S3-2</span>
-                <span class="u-flex-1">'.js-input-s3'要素にマウスをのせたら'.js-status-s3'要素のテキストに"入力中..."、離れたときは「待機中」を表示する。</span>
+                <p class="u-flex-1">
+                  '.js-input-s3'要素にマウスをのせたら'.js-status-s3'要素のテキストを"入力中..."と表示する。<br />
+                  離れたときは要素のテキストを「待機中」と表示する。
+                  <span class="c-tag -point">※「のせたとき」と「離れたとき」はそれぞれ別のイベントリスナーを設定してください。</span>
+                </p>
               </div>
             </div>
           </div>
@@ -453,10 +457,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step4: イベントオブジェクト</p>
-              </div>
+              </h2>
               <span class="c-useCase">ユーザーの操作の詳細（どのキーを押したか、どの位置をクリックしたかなど）をプログラムで受け取って処理します。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -597,14 +601,17 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S4-1</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   '.js-event-s4'要素をクリック時に発生するイベントオブジェクトを使用し、クリックされたボタンに'.is-active'クラスを付与する。<br />
                   テキストを"電源ON状態"に変更する。（スタイルは実装済み。）
-                </span>
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S4-2</span>
-                <span class="u-flex-1">'.js-key-s4'要素でキーボードのキーをクリック時に、イベントオブジェクトを使用して押されたキー名を'.js-key-s4'要素自身に表示する。</span>
+                <p class="u-flex-1">
+                  .js-key-s4 要素をクリックしたとき、イベントオブジェクトから押されたキー名を取得し、そのキー名を.js-key-s4要素自身のvalue属性に入れて表示する。
+                  <span class="c-tag -point">※input要素の表示内容はvalueプロパティで変更できます。</span>
+                </p>
               </div>
             </div>
           </div>
@@ -613,10 +620,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step5: イベント伝播</p>
-              </div>
+              </h2>
               <span class="c-useCase">ユーザーの操作が親要素まで順に伝わって、プログラムが順番に反応して処理することです。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -783,16 +790,16 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S5-1</span>
-                <span class="u-flex-1">
-                  '.js-outer-s5'要素または'.js-inner-s5'がクリックされたときに、'.js-log-s5'要素の中にクリックログをpタグとして追加する。<br />
-                  '.js-outer-s5'要素をクリックした場合："パネルをクリック"と表示する。<br />
-                  '.js-inner-s5'要素をクリックした場合："オプションを選択"と表示する。<br />
-                  （'.js-inner-s5'要素クリック時には伝播するため"パネルをクリック"と"オプションを選択"が表示される状態）
-                </span>
+                <p class="u-flex-1">
+                  '.js-outer-s5'要素と'.js-inner-s5'要素それぞれにクリックイベントを追加する。<br />
+                  '.js-outer-s5'をクリックした場合：'.js-log-s5'要素内にpタグでテキスト"パネルをクリック"を追加する。<br />
+                  '.js-inner-s5'をクリックした場合：'.js-log-s5'要素内にpタグでテキスト"オプションを選択"を追加する。<br />
+                  （L3-S5-2で修正するため実装後は'.js-inner-s5'をクリックするとバブリングにより2つのログが表示されることを確認する。）
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S5-2</span>
-                <span class="u-flex-1">'.js-inner-s5'要素をクリック時に、外側（パネル側）の処理が実行されないように修正する。</span>
+                <p class="u-flex-1">'.js-inner-s5'要素をクリック時に、外側（パネル側）の処理が実行されないように修正する。</p>
               </div>
             </div>
           </div>
@@ -801,10 +808,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step6: 既定の動作制御</p>
-              </div>
+              </h2>
               <span class="c-useCase">ブラウザの標準動作を止めて、プログラムで好きな処理を実行します。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -937,17 +944,19 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S6-1</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   '.js-form-s6'要素をクリック（フォーム送信）時にpreventDefault()で送信を止める。<br />
                   その後'.js-message-s6'要素に"送信前チェック中…"と表示する。
-                </span>
+                  <span class="c-tag -point">※送信イベントはフォーム要素自体に設定します。</span>
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S6-2</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   L3-S6-1でフォーム送信を止める。<br />
                   その後3秒後に"送信完了"と表示してフォームを送信する。
-                </span>
+                  <span class="c-tag -point">※一定時間後に処理を実行するにはsetTimeout()を使います。フォーム送信はform.submit()を使います。</span>
+                </p>
               </div>
             </div>
           </div>
@@ -956,10 +965,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step7: イベントリスナーのオプション</p>
-              </div>
+              </h2>
               <span class="c-useCase">クリックや入力などのイベントの動きを細かく設定して、プログラムがどう反応するかを調整します。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -1045,10 +1054,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step8: イベント委譲</p>
-              </div>
+              </h2>
               <span class="c-useCase">子要素ではなく親要素にイベントをまとめて設定して、プログラムが効率よく反応するようにします。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -1230,18 +1239,19 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S8-1</span>
-                <span class="u-flex-1">
-                  '.js-menu-s8'要素にトグルイベントを委譲で設定する。<br />
-                  '.js-itemTwo-s8'要素をクリック時にその要素に'.is-active'をトグルして切り替える。<br />
-                  （今回はif文での対象判定は不要。）
-                </span>
+                <p class="u-flex-1">
+                  '.js-menu-s8'要素にクリックイベントを委譲で設定する。<br />
+                  クリックされた'.js-item-s8'要素に'.is-active'をトグルして切り替える。<br />
+                  （今回はif文は未学習のため対象判定は不要。）
+                  <span class="c-tag -point">※クラスのオン/オフを切り替えるにはclassList.toggle()を使います。</span>
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S8-2</span>
-                <span class="u-flex-1">
-                  '.js-add-s8'要素にクリックイベントを委譲で設定する。<br />
+                <p class="u-flex-1">
+                  '.js-add-s8'要素にクリックイベントを設定する。<br />
                   その要素をクリック時に'.js-menu-s8'要素の中に'.js-newItem-s8'を持つ新しいli要素の"ジュース"を追加する。
-                </span>
+                </p>
               </div>
             </div>
           </div>
@@ -1250,10 +1260,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step9: 総合演習</p>
-              </div>
+              </h2>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -1264,7 +1274,7 @@
           </div>
           <div class="p-task">
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S10-1</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S9-1</span>
               <div class="p-task__contents u-flex-1">
                 <strong>ユーザー情報を表示する処理</strong>
                 <div id="q9_1" class="p-practice u-mt-8">
@@ -1290,7 +1300,7 @@
               </div>
             </div>
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S10-2</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S9-2</span>
               <div class="p-task__contents u-flex-1">
                 <strong>簡単な電卓処理</strong>
                 <div id="q9_2" class="p-practice u-mt-8">
@@ -1315,11 +1325,12 @@
                   ①.js-numLeft-s9、.js-numRight-s9要素に数値を入力する。<br />
                   ②.js-addBtn-s9、.js-subtractBtn-s9、.js-multiplyBtn-s9、.js-divideBtn-s9要素をクリックで各計算を実行する。<br />
                   ③結果を.js-calcResult-s9要素のテキストに計算結果を表示する。
+                  <span class="c-tag -point">※input要素のvalueは文字列として取得されます。計算前に数値型に変換してください。</span>
                 </p>
               </div>
             </div>
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S10-3</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S9-3</span>
               <div class="p-task__contents u-flex-1">
                 <strong>動的スタイル変更</strong>
                 <div id="q9_3" class="p-practice u-mt-8">
@@ -1347,7 +1358,7 @@
               </div>
             </div>
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S10-4</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L3-S9-4</span>
               <div class="p-task__contents u-flex-1">
                 <strong>リアルタイム文字カウンター</strong>
                 <div id="q9_4" class="p-practice u-mt-8">

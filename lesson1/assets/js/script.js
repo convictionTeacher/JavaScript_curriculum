@@ -48,6 +48,6 @@ window.BLANK_ANSWERS = {
   62: { inputs: [".js-blank--25", ".js-blank--26"], answers: ["let", "*="], validation: "default" },
   71: { inputs: [".js-blank--27", ".js-blank--28"], answers: ["const", "+"], validation: "default" },
   72: { inputs: [".js-blank--29", ".js-blank--30"], answers: ["const", "+"], validation: "default" },
-  91: { inputs: [".js-blank--31", ".js-blank--32", ".js-blank--33"], answers: ["const", "price", "log"], validation: "default" },
+  91: { inputs: [".js-blank--31", ".js-blank--32"], answers: ["const", "price"], validation: "default" },
   92: { inputs: [".js-blank--36", ".js-blank--37"], answers: ["greeting", "$"], validation: "default" },
 };

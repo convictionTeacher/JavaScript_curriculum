@@ -25,10 +25,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step1: DOM取得</p>
-              </div>
+              </h2>
               <span class="c-useCase">プログラムでHTMLの要素を選んで操作するために、その要素を取り出すことです。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094745" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -118,20 +118,18 @@
                 <h4 class="c-title-question">Q1: '#title'の要素を取得するコードの空欄を埋めてください</h4>
                 <div class="c-code -blank">
                   const textElement = document.
-                  <label for="blank-11" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--1" id="blank-11" placeholder="①" />(
-                  <label for="blank-12" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--2" id="blank-12" placeholder="②" />#text
-                  <label for="blank-13" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--3" id="blank-13" placeholder="③" />);<br />
+                  <label for="blank-11" class="c-label-input">Method name</label>
+                  <input type="text" class="c-input js-blank--1" id="blank-11" placeholder="①" />("
+                  <label for="blank-12" class="c-label-input">CSS selector</label>
+                  <input type="text" class="c-input js-blank--2" id="blank-12" placeholder="②" />");<br />
                   console.log(textElement);
                 </div>
                 <div class="p-result u-mb-10 js-blank-result--11">
                   <span class="js-blank-correct--11 u-color-normal u-hide">〇 正解！</span>
                   <span class="js-blank-incorrect--11 u-color-warning u-hide">
                     ✕ 不正解。<br />
-                    正解は ①querySelector ②"または'または` ③"または'または` です。<br />
-                    ()の中で'#'でセレクタ指定をしているためgetElementByIdは使えません。
+                    正解は ①querySelector ②#title です。<br />
+                    '#'はidを指定するCSSセレクタです。
                   </span>
                 </div>
                 <button data-blank-id="11" class="c-btn">答えを確認</button>
@@ -185,19 +183,19 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S1-1</span>
-                <span class="u-flex-1">'#q1'要素を取得し、コンソールに表示する。</span>
+                <p class="u-flex-1">'#q1'要素を取得し、コンソールに表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S1-2</span>
-                <span class="u-flex-1">'#q1'要素の中の'.js-item-s1'要素を取得し、コンソールに表示する。</span>
+                <p class="u-flex-1">'#q1'要素の中の'.js-item-s1'要素を取得し、コンソールに表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S1-3</span>
-                <span class="u-flex-1">'.js-container-s1'の中にある'.js-button-s1'要素をNodeListとしてすべて取得し、コンソールに表示する。</span>
+                <p class="u-flex-1">'.js-container-s1'の中にある'.js-button-s1'要素をNodeListとしてすべて取得し、コンソールに表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S1-4</span>
-                <span class="u-flex-1">問題番号：L2-S1-3で取得した要素のうち2つ目の要素をNodeListのインデックス[]を使って指定し、コンソールに表示する。</span>
+                <p class="u-flex-1">問題番号：L2-S1-3で取得した要素のうち2つ目の要素をNodeListのインデックス[]を使って指定し、コンソールに表示する。</p>
               </div>
             </div>
           </div>
@@ -206,10 +204,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step2: テキスト更新</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの文字をプログラムで書き換えて画面に反映させることです。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094805" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -334,11 +332,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S2-1</span>
-                <span class="u-flex-1">'.js-header-s2'要素を取得し、要素のテキストを"明日の予定"という文字列に変更する。</span>
+                <p class="u-flex-1">'.js-header-s2'要素を取得し、要素のテキストを"明日の予定"という文字列に変更する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S2-2</span>
-                <span class="u-flex-1">'.js-status-s2'要素を取得し、既存のテキストの末尾に"準備完了"という文字列を追加する。</span>
+                <p class="u-flex-1">'.js-status-s2'要素を取得し、既存のテキストの末尾に"準備完了"という文字列を追加する。</p>
               </div>
             </div>
           </div>
@@ -347,10 +345,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step3: 属性操作</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの要素に設定されている情報（属性）をプログラムで読み書きしたり変えたりします。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094833" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -374,7 +372,7 @@
                   <div class="c-code -ref">&lt;div id="user" title="admin"&gt;ユーザー&lt;/div&gt;</div>
                   <div class="c-code">
                     const userElem = document.getElementById("user");<br />
-                    console.log(userElem.getAttribute("title")
+                    console.log(userElem.getAttribute("title"))
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item"><input type="radio" name="q3_1" value="a" /> admin</label>
@@ -450,21 +448,20 @@
                 <h4 class="c-title-question">Q2: target属性の要素を取得し、そのhref属性を空文字に変更する。変更後の値を確認するコードの空欄を埋めてください。</h4>
                 <div class="c-code -ref">&lt;a href="https://example.com" target="_blank"&gt;公式サイト&lt;/a&gt;</div>
                 <div class="c-code -blank">
-                  const link = document.querySelector('[<label for="blank-33" class="c-label-input">Attribute name</label>
-                  <input type="text" class="c-input js-blank--13" id="blank-33" placeholder="①" />="
-                  <label for="blank-34" class="c-label-input">Attribute value</label>
-                  <input type="text" class="c-input js-blank--14" id="blank-34" placeholder="②" />"]');<br />link.
-                  <label for="blank-35" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--15" id="blank-35" placeholder="③" />("href", "");<br />console.log(link.
-                  <label for="blank-36" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--16" id="blank-36" placeholder="④" />("href"));
+                  const link = document.querySelector('[target="_blank"]');<br />
+                  link.
+                  <label for="blank-35" class="c-label-input">Set attribute method</label>
+                  <input type="text" class="c-input js-blank--15" id="blank-35" placeholder="①" />("href", "");<br />
+                  console.log(link.
+                  <label for="blank-36" class="c-label-input">Get attribute method</label>
+                  <input type="text" class="c-input js-blank--16" id="blank-36" placeholder="②" />("href"));
                 </div>
                 <div class="p-result u-mb-10 js-blank-result--32">
                   <span class="js-blank-correct--32 u-color-normal u-hide">〇 正解！</span>
                   <span class="js-blank-incorrect--32 u-color-warning u-hide">
                     ✕ 不正解。<br />
-                    正解は ①target ②_blank ③setAttribute ④getAttribute です。<br />
-                    ちなみに、Javascriptでは"" の中に ""など同じ種類の引用符の中に同じ引用符は使用できません。
+                    正解は ①setAttribute ②getAttribute です。<br />
+                    setAttributeで属性を設定し、getAttributeで属性の値を取得します。
                   </span>
                 </div>
                 <button data-blank-id="32" class="c-btn">答えを確認</button>
@@ -486,11 +483,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S3-1</span>
-                <span class="u-flex-1">'.js-submitBtn-old-s3'要素を取得し、class属性の値を'c-button-practice js-submitBtn-s3'に変更する。</span>
+                <p class="u-flex-1">'.js-submitBtn-old-s3'要素を取得し、class属性の値を'c-button-practice js-submitBtn-s3'に変更する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S3-2</span>
-                <span class="u-flex-1"> '.js-cancelBtn-s3'要素を取得し、disabled属性を追加して無効化する。（disabled属性には事前にスタイルを実装済み。） </span>
+                <p class="u-flex-1">'.js-cancelBtn-s3'要素を取得し、disabled属性を追加して無効化する。（disabled属性には事前にスタイルを実装済み。）</p>
               </div>
             </div>
           </div>
@@ -499,10 +496,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step4: CSSクラス操作</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの要素に付いているクラスを増やしたり減らしたりして、見た目やデザインをプログラムで変えます。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094840" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -606,21 +603,20 @@
                 <h4 class="c-title-question">Q2: input[value="メッセージ"]要素を取得し、'.is-hidden'が含まれているかどうかを確認するコードの空欄を埋めてください。</h4>
                 <div class="c-code -ref">&lt;input type="text" class="is-hidden" value="メッセージ"&gt;</div>
                 <div class="c-code -blank">
-                  const msg = document.querySelector("input[
-                  <label for="blank-43" class="c-label-input">Attribute name</label>
-                  <input type="text" class="c-input js-blank--21" id="blank-43" placeholder="①" />='メッセージ']");<br />
+                  const msg = document.querySelector("input[value='メッセージ']");<br />
                   console.log(msg.
-                  <label for="blank-44" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--22" id="blank-44" placeholder="②" />.
-                  <label for="blank-45" class="c-label-input"></label>
-                  <input type="text" class="c-input js-blank--23" id="blank-45" placeholder="③" />
+                  <label for="blank-44" class="c-label-input">Class list property</label>
+                  <input type="text" class="c-input js-blank--22" id="blank-44" placeholder="①" />.
+                  <label for="blank-45" class="c-label-input">Method name</label>
+                  <input type="text" class="c-input js-blank--23" id="blank-45" placeholder="②" />
                   ("is-hidden"));
                 </div>
                 <div class="p-result u-mb-10 js-blank-result--42">
                   <span class="js-blank-correct--42 u-color-normal u-hide">〇 正解！</span>
                   <span class="js-blank-incorrect--42 u-color-warning u-hide">
                     ✕ 不正解。<br />
-                    正解は ①value ②classList ③contains です。
+                    正解は ①classList ②contains です。<br />
+                    classListで要素のクラス一覧を取得し、containsで指定クラスの有無を確認します。
                   </span>
                 </div>
                 <button data-blank-id="42" class="c-btn">答えを確認</button>
@@ -644,11 +640,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S4-1</span>
-                <span class="u-flex-1">'.js-loginForm-s4'要素を取得して'.is-hidden'を削除しフォームを表示する。</span>
+                <p class="u-flex-1">'.js-loginForm-s4'要素を取得して'.is-hidden'を削除しフォームを表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S4-2</span>
-                <span class="u-flex-1">'.js-loginForm-s4'要素の中の'.js-loginBtn-s4'要素を取得して、'.is-active'を追加し色を変更する。</span>
+                <p class="u-flex-1">'.js-loginForm-s4'要素の中の'.js-loginBtn-s4'要素を取得して、'.is-active'を追加し色を変更する。</p>
               </div>
             </div>
           </div>
@@ -657,13 +653,13 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step5: 要素作成・追加・削除</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの新しい要素を作ったり、画面に追加したり、不要な要素を消したりして、ページの内容をプログラムで変えます。</span>
             </div>
-            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+            <a href="https://convi0310.backlog.com/alias/wiki/5094858" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
             </a>
           </div>
@@ -691,7 +687,9 @@
                   </div>
                   <div class="c-code u-mb-16">
                     const list = document.querySelector(".js-list");<br />
-                    list.append(document.createElement("li")).textContent = "ぶどう");
+                    const newLi = document.createElement("li");<br />
+                    newLi.textContent = "ぶどう";<br />
+                    list.append(newLi);
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item"><input type="radio" name="q5_1" value="a" /> りんご みかん</label>
@@ -721,7 +719,9 @@
                   </div>
                   <div class="c-code u-mb-16">
                     const box = document.querySelector(".js-box");<br />
-                    box.prepend(document.createElement("p")).textContent = "黄";<br />
+                    const newP = document.createElement("p");<br />
+                    newP.textContent = "黄";<br />
+                    box.prepend(newP);<br />
                     box.querySelectorAll("p")[1].remove();
                   </div>
                   <div class="p-choice js-choices">
@@ -810,14 +810,14 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S5-1</span>
-                <span class="u-flex-1">新しいタスク"メール返信"を作成し、末尾に追加。スタイルは既存のタスクと統一する。</span>
+                <p class="u-flex-1">新しいタスク"メール返信"を作成し、末尾に追加。スタイルは既存のタスクと統一する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S5-2</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   '.js-taskForm-s5'内のすべてのli要素を取得する。<br />
                   取得したli要素のうち打ち合わせタスクのみをインデックスを使って削除する。
-                </span>
+                </p>
               </div>
             </div>
           </div>
@@ -826,10 +826,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step6: フォーム・入力値取得と状態操作</p>
-              </div>
+              </h2>
               <span class="c-useCase">ユーザーが入力した値をプログラムで読み取ったり、入力欄の状態（有効・無効など）を変えたりして操作します。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094899" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -907,18 +907,18 @@
             </div>
             <div class="p-blank">
               <div class="p-blank__item js-blankItem">
-                <h4 class="c-title-question">Q1: Python要素をチェックするコードの空欄を埋めてください。</h4>
+                <h4 class="c-title-question">Q1: TypeScript要素をチェックするコードの空欄を埋めてください。</h4>
                 <div class="c-code -ref">
                   &lt;form&gt;<br />
                   &nbsp;&nbsp;&lt;label&gt;&lt;input type="checkbox" class="js-lang" value="JS" checked&gt;JavaScript&lt;/label&gt;<br />
-                  &nbsp;&nbsp;&lt;label&gt;&lt;input type="checkbox" class="js-lang" value="Python"&gt;Python&lt;/label&gt;<br />
+                  &nbsp;&nbsp;&lt;label&gt;&lt;input type="checkbox" class="js-lang" value="TS"&gt;TypeScript&lt;/label&gt;<br />
                   &lt;/form&gt;
                 </div>
                 <div class="c-code -blank">
-                  const langPython = document.querySelectorAll(".js-lang")[
+                  const langTS = document.querySelectorAll(".js-lang")[
                   <label for="blank-61" class="c-label-input">Index</label>
                   <input type="text" class="c-input js-blank--28" id="blank-61" placeholder="①" />]; <br />
-                  langPython.
+                  langTS.
                   <label for="blank-61-2" class="c-label-input">Property</label>
                   <input type="text" class="c-input js-blank--29" id="blank-61-2" placeholder="②" />
                   = true;
@@ -971,11 +971,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S6-1</span>
-                <span class="u-flex-1">'js-email-s6'要素の値を取得してコンソールに出力し、その後入力欄を空にする。</span>
+                <p class="u-flex-1">'.js-email-s6'要素の値を取得してコンソールに出力し、その後入力欄を空にする。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S6-2</span>
-                <span class="u-flex-1">'js-agree-s6'要素を初期状態でチェック済みにし、チェック状態をコンソールに出力する。</span>
+                <p class="u-flex-1">'js-agree-s6'要素を初期状態でチェック済みにし、チェック状態をコンソールに出力する。</p>
               </div>
             </div>
           </div>
@@ -984,10 +984,10 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step7: DOMツリーナビゲーション</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの要素同士の親子関係をたどって、目的の要素をプログラムで探したり操作したりします。</span>
             </div>
             <a href="https://convi0310.backlog.com/alias/wiki/5094913" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
@@ -1100,7 +1100,7 @@
                   &lt;ul&gt;<br />
                   &nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br />
                   &nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br />
-                  &nbsp;&nbsp;&lt;li class="js-target&gt;&lt;/li&gt;<br />
+                  &nbsp;&nbsp;&lt;li class="js-target"&gt;&lt;/li&gt;<br />
                   &lt;/ul&gt;
                 </div>
                 <div class="c-code -blank">
@@ -1141,11 +1141,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S7-1</span>
-                <span class="u-flex-1">'.js-target-s7'要素の親要素の、最初の子要素のテキストをコンソールに表示する。</span>
+                <p class="u-flex-1">'.js-target-s7'要素の親要素の、最初の子要素のテキストをコンソールに表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S7-2</span>
-                <span class="u-flex-1">'.js-target-s7'要素の、次の兄弟要素のテキストを"ニュース"へ変更する。</span>
+                <p class="u-flex-1">'.js-target-s7'要素の、次の兄弟要素のテキストを"ニュース"へ変更する。</p>
               </div>
             </div>
           </div>
@@ -1154,13 +1154,13 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step8: カスタムデータ操作</p>
-              </div>
+              </h2>
               <span class="c-useCase">HTMLの要素に付けた自分専用のデータを読み書きして、プログラムで使いやすくします。</span>
             </div>
-            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+            <a href="https://convi0310.backlog.com/alias/wiki/5094943" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
             </a>
           </div>
@@ -1293,11 +1293,11 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S8-1</span>
-                <span class="u-flex-1">.js-user-s8の'data-user-id'の値を取得し、コンソールに表示する。</span>
+                <p class="u-flex-1">.js-user-s8の'data-user-id'の値を取得し、コンソールに表示する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S8-2</span>
-                <span class="u-flex-1">L2-S8-1で取得した'data-user-id'の値をid属性の値で持つ要素を取得し、'data-name'を"田中茉莉"へ変更する。</span>
+                <p class="u-flex-1">L2-S8-1で取得した'data-user-id'の値をid属性の値で持つ要素を取得し、'data-name'を"田中茉莉"へ変更する。<br /></p>
               </div>
             </div>
           </div>
@@ -1306,13 +1306,13 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step9: DOM一括管理</p>
-              </div>
+              </h2>
               <span class="c-useCase">複数のHTML要素をまとめて扱い、プログラムで同時に操作したり状態を変えたりしています。</span>
             </div>
-            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+            <a href="https://convi0310.backlog.com/alias/wiki/5094960" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
             </a>
           </div>
@@ -1448,18 +1448,18 @@
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S9-1</span>
-                <span class="u-flex-1">
+                <p class="u-flex-1">
                   新しくDocumentFragmentを作成し、'.p-practice__card'をもつli要素を1つ作成する。（テキストは"HOME"）<br />
                   作成したli要素をDocumentFragmentに追加する。
-                </span>
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S9-2</span>
-                <span class="u-flex-1">L2-S9-1で作成したDocumentFragmentを、 '.js-template-s9'要素の中身（content）に追加する。</span>
+                <p class="u-flex-1">L2-S9-1で作成したDocumentFragmentを、 '.js-template-s9'要素の中身（content）に追加する。</p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L2-S9-3</span>
-                <span class="u-flex-1">'.js-template-s9'要素の中身を複製し、'.js-navList-s9'要素の配下に追加する。</span>
+                <p class="u-flex-1">'.js-template-s9'要素の中身を複製し、'.js-navList-s9'要素の配下に追加する。</p>
               </div>
             </div>
           </div>
@@ -1468,14 +1468,11 @@
         <section class="p-section js-section">
           <div class="p-section__title">
             <div class="p-section__title--content">
-              <div class="p-section__title--top">
+              <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
                 <p>Step10: 総合演習</p>
-              </div>
+              </h2>
             </div>
-            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
-              <span class="material-icons">menu_book</span>
-            </a>
           </div>
           <div class="p-desc">
             <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
@@ -1551,7 +1548,7 @@
                 <p>
                   ① 初期表示時に、data-icon="javascript"を持つラジオボタンを選択状態にする。<br />
                   ② '.js-container-s10'の子要素から、現在チェックされている入力要素を取得する。<br />
-                  ③ その選択された要素のテキストを'.js-result-s10'要素に表示する。
+                  ③ その選択された要素の値（value）を'.js-result-s10'要素に表示する。
                 </p>
               </div>
             </div>
