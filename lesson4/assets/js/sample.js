@@ -16,16 +16,16 @@ L4_S1();
 // L4-S2:
 // ===================================
 function L4_S2() {
-  const inStock = true;
-  const purchasable = false;
-  console.log(inStock && purchasable);
+  const isRegistered = true;
+  const isVerified = false;
+  console.log(isRegistered && isVerified);
 
   const onSale = true;
-  const freeShipping = false;
-  console.log(onSale || freeShipping);
+  const isFreeShipping = false;
+  console.log(onSale || isFreeShipping);
 
-  const outOfStock = true;
-  console.log(!outOfStock);
+  const isSoldOut = true;
+  console.log(!isSoldOut);
 }
 L4_S2();
 
@@ -111,6 +111,7 @@ function L4_S5_1() {
   const q5 = document.querySelector("#q5");
   const select = q5.querySelector(".js-size-s5");
   const alert = q5.querySelector(".js-cart-s5");
+
   select.addEventListener("change", () => {
     alert.classList.remove("is-red", "is-blue", "is-green");
     if (select.value === "Sサイズ") {
