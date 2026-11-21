@@ -51,7 +51,7 @@ L6_S3_1();
 // L6-S3-2:
 // '.js-insertBtn-s3'をクリックしたとき、
 // '.js-insertIndex-s3'のインデックスに
-// '.js-insertInput-s3'の値をspliceで挿入し、
+// '.js-insertInput-s3'の値をspliceで挿入し、`
 // '.js-spliceList-s3'の表示を更新する。
 // ===================================
 function L6_S3_2() {}

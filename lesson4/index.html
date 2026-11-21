@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../common/assets/css/base.css" />
     <link rel="stylesheet" href="../common/assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
@@ -1540,7 +1541,6 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step9: 総合演習</p>
               </h2>
-              <span class="c-useCase">これまで学んだ条件分岐を組み合わせて、実務で使えるUIが自分で実装できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -1567,8 +1567,8 @@
                   </div>
                 </div>
                 <p>
-                  '.js-submitBtn-s9'をクリックしたとき、'.js-input-s9'の値が空なら'.js-result-s9'に"エラー：入力してください"と表示する。<br />
-                  入力がある場合は"OK：送信しました"と表示する。
+                  ① '.js-submitBtn-s9'をクリックしたとき、'.js-input-s9'の値が空なら'.js-result-s9'に"エラー：入力してください"と表示する。<br />
+                  ② 入力がある場合は"OK：送信しました"と表示する。
                 </p>
               </div>
             </div>
@@ -1589,9 +1589,9 @@
                   </div>
                 </div>
                 <p>
-                  '.js-loginToggle-s9'をクリックするたびに、ログイン状態を切り替える。<br />
-                  ログイン中なら'.js-logoutMenu-s9'を表示し'.js-loginMenu-s9'を非表示にして'.js-loginStatus-s9'に"ログイン中"と表示する。<br />
-                  未ログインなら逆にする。
+                  ① '.js-loginToggle-s9'をクリックするたびに、ログイン状態を切り替える。<br />
+                  ② ログイン中なら'.js-logoutMenu-s9'を表示し'.js-loginMenu-s9'を非表示にして'.js-loginStatus-s9'に"ログイン中"と表示する。<br />
+                  ③ 未ログインなら逆にする。
                 </p>
               </div>
             </div>
@@ -1608,17 +1608,14 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="js-modalOverlay-s9 u-hide"
-                  style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); align-items: center; justify-content: center; z-index: 100"
-                >
-                  <div class="js-modal-s9" style="background: #fff; padding: 24px; border-radius: 8px; min-width: 200px">
+                <div class="p-practice__modalOverlay js-modalOverlay-s9 u-hide">
+                  <div class="p-practice__modal js-modal-s9">
                     <p>モーダルの中身</p>
                   </div>
                 </div>
                 <p>
-                  '.js-openModal-s9'をクリックしたら'.js-modalOverlay-s9'から'u-hide'クラスを削除し、display を "flex" に設定して表示する。<br />
-                  '.js-modalOverlay-s9'をクリックしたとき、クリックした場所が'.js-modal-s9'の外なら'u-hide'クラスを追加して非表示にする。
+                  ① '.js-openModal-s9'をクリックしたら'.js-modalOverlay-s9'から'u-hide'クラスを削除し'is-show'クラスを追加して表示する。<br />
+                  ② '.js-modalOverlay-s9'をクリックしたとき、クリックした場所が'.js-modal-s9'の外なら'is-show'クラスを削除し'u-hide'クラスを追加して非表示にする。
                 </p>
               </div>
             </div>
@@ -1637,8 +1634,8 @@
                   </div>
                 </div>
                 <p>
-                  '.js-accordionBtn-s9'をクリックしたとき、closest('.js-accordion-s9')で親要素を取得し、その中の'.js-accordionContent-s9'の'is-open'クラスをtoggleする。<br />
-                  'is-open'があれば内容を表示（max-height: 100px）、なければ非表示（max-height: 0）にする。
+                  ① '.js-accordionBtn-s9'をクリックしたとき、同じ'.js-accordion-s9'内にある'.js-accordionContent-s9'の'is-open'クラスをtoggleする。<br />
+                  ② 'is-open'があれば内容を表示し、なければ非表示にする。
                 </p>
               </div>
             </div>
@@ -1650,20 +1647,20 @@
                 <div id="q9_5" class="p-practice u-mt-8">
                   <h2 class="c-title-lesson">タブ切替の練習</h2>
                   <div class="p-practice__inner">
-                    <div class="js-tabMenu-s9" style="display: flex; gap: 4px; margin-bottom: 8px">
+                    <div class="p-practice__tabMenu js-tabMenu-s9">
                       <button class="c-tab js-tabBtn-s9 is-active" data-id="tab1">タブ1</button>
                       <button class="c-tab js-tabBtn-s9" data-id="tab2">タブ2</button>
                       <button class="c-tab js-tabBtn-s9" data-id="tab3">タブ3</button>
                     </div>
-                    <div class="js-tabContent-s9 is-active" data-content="tab1" style="padding: 8px; background: var(--color-primary-light); border-radius: 4px">タブ1の内容</div>
-                    <div class="js-tabContent-s9" data-content="tab2" style="padding: 8px; background: var(--color-primary-light); border-radius: 4px; display: none">タブ2の内容</div>
-                    <div class="js-tabContent-s9" data-content="tab3" style="padding: 8px; background: var(--color-primary-light); border-radius: 4px; display: none">タブ3の内容</div>
+                    <div class="p-practice__tabContent js-tabContent-s9 is-active" data-content="tab1">タブ1の内容</div>
+                    <div class="p-practice__tabContent js-tabContent-s9" data-content="tab2">タブ2の内容</div>
+                    <div class="p-practice__tabContent js-tabContent-s9" data-content="tab3">タブ3の内容</div>
                   </div>
                 </div>
                 <p>
-                  '.js-tabBtn-s9'をクリックしたとき、クリックしたボタンのdata-id属性の値を取得する。<br />
-                  すべての'.js-tabBtn-s9'から'is-active'を削除し、クリックしたボタンに'is-active'を追加する。<br />
-                  すべての'.js-tabContent-s9'をdisplay:noneにし、data-contentが一致するコンテンツをdisplay:blockにする。
+                  ① '.js-tabBtn-s9'をクリックしたとき、クリックしたボタンのdata-id属性の値を取得する。<br />
+                  ② すべての'.js-tabBtn-s9'から'is-active'を削除し、クリックしたボタンに'is-active'を追加する。<br />
+                  ③ すべての'.js-tabContent-s9'から'is-active'を削除し、data-contentが一致するコンテンツに'is-active'を追加する。
                 </p>
               </div>
             </div>

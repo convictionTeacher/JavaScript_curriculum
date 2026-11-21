@@ -117,43 +117,43 @@ L4_S8();
 
 // ===================================
 // L4-S9-1:
-// '.js-submitBtn-s9'をクリックしたとき、'.js-input-s9'の値が空なら
-// '.js-result-s9'に"エラー：入力してください"と表示する。入力がある場合は"OK：送信しました"と表示する。
+// ① '.js-submitBtn-s9'をクリックしたとき、'.js-input-s9'の値が空なら
+// '.js-result-s9'に"エラー：入力してください"と表示する。
+// ② 入力がある場合は"OK：送信しました"と表示する。
 // ===================================
 function L4_S9_1() {}
 L4_S9_1();
 
 // ===================================
 // L4-S9-2:
-// '.js-loginToggle-s9'をクリックするたびに、ログイン状態を切り替える。
-// ログイン中なら'.js-logoutMenu-s9'を表示し'.js-loginMenu-s9'を非表示にして'.js-loginStatus-s9'に"ログイン中"と表示する。
-// 未ログインなら逆にする。
+// ① '.js-loginToggle-s9'をクリックするたびに、ログイン状態を切り替える。
+// ② ログイン中なら'.js-logoutMenu-s9'を表示し'.js-loginMenu-s9'を非表示にして'.js-loginStatus-s9'に"ログイン中"と表示する。
+// ③ 未ログインなら逆にする。
 // ===================================
 function L4_S9_2() {}
 L4_S9_2();
 
 // ===================================
 // L4-S9-3:
-// '.js-openModal-s9'をクリックしたら'.js-modalOverlay-s9'から'u-hide'クラスを削除し、displayを"flex"に設定して表示する。
-// '.js-modalOverlay-s9'をクリックしたとき、クリックした場所が'.js-modal-s9'の外なら'u-hide'クラスを追加して非表示にする。
+// ① '.js-openModal-s9'をクリックしたら'.js-modalOverlay-s9'から'u-hide'クラスを削除し'is-show'クラスを追加して表示する。
+// ② '.js-modalOverlay-s9'をクリックしたとき、クリックした場所が'.js-modal-s9'の外なら'is-show'クラスを削除し'u-hide'クラスを追加して非表示にする。
 // ===================================
 function L4_S9_3() {}
 L4_S9_3();
 
 // ===================================
 // L4-S9-4:
-// '.js-accordionBtn-s9'をクリックしたとき、 closest('.js-accordion-s9')で親要素を取得し、
-// その中の'.js-accordionContent-s9'の'is-open'クラスをtoggleする。
-// 'is-open'があれば内容を表示（max-height: 100px）、なければ非表示（max-height: 0）にする。
+// ① '.js-accordionBtn-s9'をクリックしたとき、同じ'.js-accordion-s9'内にある'.js-accordionContent-s9'の'is-open'クラスをtoggleする。
+// ② 'is-open'があれば内容を表示し、なければ非表示にする。
 // ===================================
 function L4_S9_4() {}
 L4_S9_4();
 
 // ===================================
 // L4-S9-5:
-// '.js-tabBtn-s9'をクリックしたとき、クリックしたボタンのdata-id属性の値を取得する。
-// すべての'.js-tabBtn-s9'から'is-active'を削除し、クリックしたボタンに'is-active'を追加する。
-// すべての'.js-tabContent-s9'をdisplay:noneにし、data-contentが一致するコンテンツをdisplay:blockにする。
+// ① '.js-tabBtn-s9'をクリックしたとき、クリックしたボタンのdata-id属性の値を取得する。
+// ② すべての'.js-tabBtn-s9'から'is-active'を削除し、クリックしたボタンに'is-active'を追加する。
+// ③ すべての'.js-tabContent-s9'から'is-active'を削除し、data-contentが一致するコンテンツに'is-active'を追加する。
 // ===================================
 function L4_S9_5() {}
 L4_S9_5();
