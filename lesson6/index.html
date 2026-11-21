@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../common/assets/css/base.css" />
     <link rel="stylesheet" href="../common/assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
@@ -30,7 +29,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step1: 配列作成・取得</p>
               </h2>
-              <span class="c-useCase">配列にデータをまとめて保存し、インデックスで取り出せるようになります。</span>
+              <span class="c-useCase">商品カテゴリや注文ステータスのような一覧データを配列にまとめ、番号で取り出せるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -60,13 +59,13 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const fruits = ["りんご", "バナナ", "オレンジ"];<br />
-                    console.log(fruits[1]);
+                    const orderStatuses = ["受付", "発送準備中", "発送済み"];<br />
+                    console.log(orderStatuses[1]);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q1_1" value="a" /> りんご</label>
-                    <label class="p-choice__item"><input type="radio" name="q1_1" value="b" /> バナナ</label>
-                    <label class="p-choice__item"><input type="radio" name="q1_1" value="c" /> オレンジ</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="a" /> 受付</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="b" /> 発送準備中</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_1" value="c" /> 発送済み</label>
                     <label class="p-choice__item"><input type="radio" name="q1_1" value="d" /> undefined</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--11">
@@ -74,8 +73,8 @@
                     <span class="js-quiz-correct--11 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--11 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「バナナ」です。<br />
-                      インデックスは0から始まるため、[1]は2番目の要素「バナナ」を指します。
+                      正解は「発送準備中」です。<br />
+                      配列の番号（インデックス）は0から始まるため、[1]は2番目の要素を指します。1から数えてしまうのは新人がよくやるミスです。
                     </span>
                   </div>
                   <button data-quiz-id="q1_1" data-step-question-id="11" class="c-btn">答えを確認</button>
@@ -83,13 +82,13 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const colors = ["赤", "青", "黄", "緑"];<br />
-                    console.log(colors.length);
+                    const notices = ["メンテナンスのお知らせ", "新機能リリース", "料金改定のお知らせ"];<br />
+                    console.log(notices.length);
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item"><input type="radio" name="q1_2" value="a" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q1_2" value="b" /> 4</label>
-                    <label class="p-choice__item"><input type="radio" name="q1_2" value="c" /> 5</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="b" /> 2</label>
+                    <label class="p-choice__item"><input type="radio" name="q1_2" value="c" /> 4</label>
                     <label class="p-choice__item"><input type="radio" name="q1_2" value="d" /> undefined</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--12">
@@ -97,8 +96,8 @@
                     <span class="js-quiz-correct--12 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--12 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「4」です。<br />
-                      lengthは配列の要素数を返します。4つの要素があるので4になります。
+                      正解は「3」です。<br />
+                      lengthは配列の要素数を返します。実務では「お知らせ 3件」のような件数表示によく使います。
                     </span>
                   </div>
                   <button data-quiz-id="q1_2" data-step-question-id="12" class="c-btn">答えを確認</button>
@@ -114,35 +113,37 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 配列の2番目の要素を取得するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: 先頭のカテゴリと2番目のカテゴリを順にコンソールに表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const items = ["A", "B", "C"];<br />
-                    console.log(items[<label for="blank-111" class="c-label-input">インデックス番号</label><input type="text" class="c-input js-blank--11-1" id="blank-111" placeholder="①" />]);
+                    const categories = ["PC本体", "周辺機器", "ソフトウェア"];<br />
+                    console.log(categories[<label for="blank-111" class="c-label-input">インデックス番号</label><input type="text" class="c-input js-blank--11-1" id="blank-111" placeholder="①" />]);<br />
+                    console.log(categories[<label for="blank-112" class="c-label-input">インデックス番号</label><input type="text" class="c-input js-blank--11-2" id="blank-112" placeholder="②" />]);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--11">
                     <span class="js-blank-message--11 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--11 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--11 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①1 です。<br />
-                      配列のインデックスは0から始まるため、2番目の要素は[1]で取得します。
+                      正解は ①0 ②1 です。<br />
+                      インデックスは0から始まるため、先頭は[0]、2番目は[1]で取得します。
                     </span>
                   </div>
                   <button data-blank-id="11" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 配列の要素数を取得するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: カート内の商品数を変数に保存し、"カート内：3点"と表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const list = ["月", "火", "水", "木", "金"];<br />
-                    console.log(list.<label for="blank-121" class="c-label-input">プロパティ名</label><input type="text" class="c-input js-blank--12-1" id="blank-121" placeholder="①" />);
+                    const cartItems = ["ノートPC", "ワイヤレスマウス", "USBハブ"];<br />
+                    const itemCount = cartItems.<label for="blank-121" class="c-label-input">プロパティ名</label><input type="text" class="c-input js-blank--12-1" id="blank-121" placeholder="①" />;<br />
+                    console.log("カート内：" + <label for="blank-122" class="c-label-input">変数名</label><input type="text" class="c-input js-blank--12-2" id="blank-122" placeholder="②" /> + "点");
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--12">
                     <span class="js-blank-message--12 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--12 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--12 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①length です。<br />
-                      lengthプロパティで配列の要素数を取得できます。
+                      正解は ①length ②itemCount です。<br />
+                      lengthプロパティで配列の要素数を取得し、変数itemCountに保存してから表示に使います。
                     </span>
                   </div>
                   <button data-blank-id="12" class="c-btn">答えを確認</button>
@@ -156,20 +157,26 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q1" class="p-practice">
-              <h2 class="c-title-lesson">配列の練習</h2>
+              <h2 class="c-title-lesson">商品カテゴリを取り出す練習</h2>
               <div class="p-practice__inner">
-                <p class="js-firstFruit-s1"></p>
-                <p class="js-fruitCount-s1"></p>
+                <div class="p-practice__card js-firstCategory-s1">ここに先頭のカテゴリが表示されます。</div>
+                <div class="p-practice__card js-lastCategory-s1">ここに最後のカテゴリが表示されます。</div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S1-1</span>
-                <p class="u-flex-1">以下の配列を作成し、最初の要素を'.js-firstFruit-s1'に表示する。const fruits = ["りんご", "バナナ", "オレンジ", "ぶどう"];</p>
+                <p class="u-flex-1">
+                  ①"PC本体"、"周辺機器"、"ソフトウェア"、"サポート"の4つのカテゴリを、この順番で配列にまとめる。<br />
+                  ②先頭のカテゴリを'.js-firstCategory-s1'要素のテキストに表示する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S1-2</span>
-                <p class="u-flex-1">同じ配列の要素数を'.js-fruitCount-s1'に「全X種類」と表示する。</p>
+                <p class="u-flex-1">
+                  L6-S1-1の配列の最後のカテゴリを'.js-lastCategory-s1'要素のテキストに表示する。<br />
+                  配列の要素数が増減しても、常に最後の要素が表示されるようにする。
+                </p>
               </div>
             </div>
           </div>
@@ -182,7 +189,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step2: 要素追加・削除</p>
               </h2>
-              <span class="c-useCase">配列に要素を追加したり削除したりして、動的なリスト管理ができるようになります。</span>
+              <span class="c-useCase">配列に要素を追加・削除して、カートや検索履歴のような増減するリストを管理できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -212,15 +219,15 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const list = ["A", "B"];<br />
-                    list.push("C");<br />
-                    console.log(list.length);
+                    const cartItems = ["ノートPC", "ワイヤレスマウス"];<br />
+                    cartItems.push("キーボード");<br />
+                    console.log(cartItems.length);
                   </div>
                   <div class="p-choice js-choices">
                     <label class="p-choice__item"><input type="radio" name="q2_1" value="a" /> 2</label>
                     <label class="p-choice__item"><input type="radio" name="q2_1" value="b" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q2_1" value="c" /> ["A","B","C"]</label>
-                    <label class="p-choice__item"><input type="radio" name="q2_1" value="d" /> "C"</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="c" /> ["ノートPC", "ワイヤレスマウス", "キーボード"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_1" value="d" /> "キーボード"</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--21">
                     <span class="js-quiz-message--21 u-color-message u-hide">選択肢を選んでください。</span>
@@ -236,23 +243,23 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const items = ["X", "Y", "Z"];<br />
-                    const removed = items.pop();<br />
-                    console.log(removed);
+                    const viewHistory = ["トップ", "商品一覧", "商品詳細"];<br />
+                    const removedPage = viewHistory.pop();<br />
+                    console.log(removedPage);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q2_2" value="a" /> "X"</label>
-                    <label class="p-choice__item"><input type="radio" name="q2_2" value="b" /> "Y"</label>
-                    <label class="p-choice__item"><input type="radio" name="q2_2" value="c" /> "Z"</label>
-                    <label class="p-choice__item"><input type="radio" name="q2_2" value="d" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="a" /> "トップ"</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="b" /> "商品一覧"</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="c" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q2_2" value="d" /> "商品詳細"</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--22">
                     <span class="js-quiz-message--22 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--22 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--22 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「"Z"」です。<br />
-                      popは配列の末尾の要素を取り出して返します。末尾は"Z"なので"Z"が返ります。
+                      正解は「"商品詳細"」です。<br />
+                      popは配列の末尾の要素を取り除き、その要素を返します。
                     </span>
                   </div>
                   <button data-quiz-id="q2_2" data-step-question-id="22" class="c-btn">答えを確認</button>
@@ -268,37 +275,40 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 配列の末尾に要素を追加するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: カートの末尾に商品を追加したあと、間違えて追加した末尾の商品を取り消すコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const fruits = ["りんご", "バナナ"];<br />
-                    fruits.<label for="blank-211" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--21-1" id="blank-211" placeholder="①" />("オレンジ");<br />
-                    console.log(fruits.length);
+                    const cartItems = ["ノートPC", "ワイヤレスマウス"];<br />
+                    cartItems.<label for="blank-211" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--21-1" id="blank-211" placeholder="①" />("キーボード");<br />
+                    const canceledItem = cartItems.<label for="blank-212" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--21-2" id="blank-212" placeholder="②" />();<br />
+                    console.log(canceledItem);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--21">
                     <span class="js-blank-message--21 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--21 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--21 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①push です。<br />
-                      pushメソッドで配列の末尾に要素を追加できます。
+                      正解は ①push ②pop です。<br />
+                      pushで末尾に追加し、popで末尾の要素を取り除きます。popは取り除いた要素を返すので、"キーボード"が表示されます。
                     </span>
                   </div>
                   <button data-blank-id="21" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 配列の先頭に要素を追加するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 重要なお知らせを一覧の先頭に追加し、対応が終わったら先頭から取り除くコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const numbers = [2, 3, 4];<br />
-                    numbers.<label for="blank-221" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--22-1" id="blank-221" placeholder="①" />(1);<br />
-                    console.log(numbers[0]);
+                    const notices = ["定期メンテナンス", "新機能リリース"];<br />
+                    notices.<label for="blank-221" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--22-1" id="blank-221" placeholder="①" />("【重要】障害発生のお知らせ");<br />
+                    console.log(notices[0]);<br />
+                    notices.<label for="blank-222" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--22-2" id="blank-222" placeholder="②" />();<br />
+                    console.log(notices[0]);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--22">
                     <span class="js-blank-message--22 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--22 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--22 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①unshift です。<br />
-                      unshiftメソッドで配列の先頭に要素を追加できます。
+                      正解は ①unshift ②shift です。<br />
+                      unshiftは配列の先頭に要素を追加し、shiftは先頭の要素を取り除きます。末尾を操作するpush / popとセットで覚えると便利です。
                     </span>
                   </div>
                   <button data-blank-id="22" class="c-btn">答えを確認</button>
@@ -312,24 +322,35 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q2" class="p-practice">
-              <h2 class="c-title-lesson">リスト管理の練習</h2>
-              <div class="p-practice__inner">
-                <div class="p-practice__card">
-                  <input type="text" class="c-input js-addInput-s2" placeholder="項目を入力" />
-                  <button type="button" class="c-button-practice js-addBtn-s2">追加</button>
-                  <button type="button" class="c-button-practice js-removeBtn-s2">末尾を削除</button>
-                  <div class="js-itemList-s2"></div>
+              <h2 class="c-title-lesson">検索履歴を管理する練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <input type="text" class="c-input js-keywordInput-s2" placeholder="検索キーワードを入力" />
+                  <button type="button" class="c-button-practice js-addBtn-s2">履歴に追加</button>
+                  <button type="button" class="c-button-practice js-removeBtn-s2">最後の履歴を削除</button>
                 </div>
+                <ul class="p-practice__item js-historyList-s2">
+                  <li class="p-practice__card">ノートPC</li>
+                  <li class="p-practice__card">ワイヤレスマウス</li>
+                </ul>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S2-1</span>
-                <p class="u-flex-1">'.js-addBtn-s2'をクリックしたとき、'.js-addInput-s2'の値をpushで配列に追加し、'.js-itemList-s2'にすべての要素を表示する。</p>
+                <p class="u-flex-1">
+                  ①"ノートPC"、"ワイヤレスマウス"の2件を、検索履歴の初期データとして配列にまとめる。<br />
+                  ②'.js-addBtn-s2'要素をクリックしたとき、'.js-keywordInput-s2'要素に入力された値を配列の末尾に追加する。<br />
+                  ③配列のすべての要素を'.js-historyList-s2'要素の中に'p-practice__card'クラス付きのli要素で表示し直す。<br />
+                  ④入力欄を空にする。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S2-2</span>
-                <p class="u-flex-1">'.js-removeBtn-s2'をクリックしたとき、配列の末尾をpopで削除し、'.js-itemList-s2'の表示を更新する。</p>
+                <p class="u-flex-1">
+                  ①'.js-removeBtn-s2'要素をクリックしたとき、最後に追加したキーワードを配列から削除する。<br />
+                  ②'.js-historyList-s2'要素の表示を更新する。
+                </p>
               </div>
             </div>
           </div>
@@ -342,7 +363,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step3: 指定位置操作</p>
               </h2>
-              <span class="c-useCase">配列の指定した位置に要素を挿入・削除して、柔軟にデータを操作できるようになります。</span>
+              <span class="c-useCase">配列の指定した位置に要素を追加・削除して、メニューの並びのような順番のあるデータを操作できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -372,23 +393,23 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const items = ["A", "B", "C", "D"];<br />
-                    items.splice(1, 1);<br />
-                    console.log(items.length);
+                    const checkoutSteps = ["カート", "お届け先入力", "支払い方法", "確認"];<br />
+                    checkoutSteps.splice(2, 1);<br />
+                    console.log(checkoutSteps);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q3_1" value="a" /> 4</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_1" value="b" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_1" value="c" /> 2</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_1" value="d" /> 1</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="a" /> ["カート", "お届け先入力", "確認"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="b" /> ["カート", "支払い方法", "確認"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="c" /> ["カート", "お届け先入力", "支払い方法"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_1" value="d" /> ["支払い方法"]</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--31">
                     <span class="js-quiz-message--31 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--31 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--31 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「3」です。<br />
-                      splice(1, 1)はインデックス1から1つ削除します。4要素から1つ削除して3になります。
+                      正解は「["カート", "お届け先入力", "確認"]」です。<br />
+                      splice(2, 1)はインデックス2の位置から1つ削除します。インデックス2は3番目の"支払い方法"です。
                     </span>
                   </div>
                   <button data-quiz-id="q3_1" data-step-question-id="31" class="c-btn">答えを確認</button>
@@ -396,23 +417,23 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const fruits = ["りんご", "バナナ", "ぶどう"];<br />
-                    fruits.splice(1, 0, "みかん");<br />
-                    console.log(fruits[1]);
+                    const adminMenu = ["ダッシュボード", "注文管理", "設定"];<br />
+                    adminMenu.splice(2, 0, "顧客管理");<br />
+                    console.log(adminMenu[2]);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q3_2" value="a" /> りんご</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_2" value="b" /> バナナ</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_2" value="c" /> みかん</label>
-                    <label class="p-choice__item"><input type="radio" name="q3_2" value="d" /> ぶどう</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="a" /> ダッシュボード</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="b" /> 注文管理</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="c" /> 顧客管理</label>
+                    <label class="p-choice__item"><input type="radio" name="q3_2" value="d" /> 設定</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--32">
                     <span class="js-quiz-message--32 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--32 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--32 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「みかん」です。<br />
-                      splice(1, 0, "みかん")はインデックス1に削除なしで"みかん"を挿入します。
+                      正解は「顧客管理」です。<br />
+                      splice(2, 0, "顧客管理")はインデックス2の位置に、何も削除せずに"顧客管理"を挿入します。"設定"は後ろにずれます。
                     </span>
                   </div>
                   <button data-quiz-id="q3_2" data-step-question-id="32" class="c-btn">答えを確認</button>
@@ -428,37 +449,39 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: インデックス2の要素を1つ削除するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: インデックス1のお知らせを1件だけ削除するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const list = ["A", "B", "C", "D"];<br />
-                    list.<label for="blank-311" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--31-1" id="blank-311" placeholder="①" />(2, 1);<br />
-                    console.log(list.length);
+                    const notices = ["定期メンテナンス", "キャンペーン終了", "新機能リリース"];<br />
+                    notices.<label for="blank-311" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--31-1" id="blank-311" placeholder="①" />(1, <label for="blank-312" class="c-label-input">削除する個数</label
+                    ><input type="text" class="c-input js-blank--31-2" id="blank-312" placeholder="②" />);<br />
+                    console.log(notices);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--31">
                     <span class="js-blank-message--31 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--31 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--31 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①splice です。<br />
-                      spliceメソッドで指定位置の要素を削除できます。
+                      正解は ①splice ②1 です。<br />
+                      spliceの第1引数が位置、第2引数が削除する個数です。結果は["定期メンテナンス", "新機能リリース"]になります。
                     </span>
                   </div>
                   <button data-blank-id="31" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: インデックス1に新要素を挿入（削除なし）するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: インデックス2の位置に"よくある質問"を挿入（削除なし）するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const items = ["X", "Y", "Z"];<br />
-                    items.splice(1, <label for="blank-321" class="c-label-input">削除する個数</label><input type="text" class="c-input js-blank--32-1" id="blank-321" placeholder="①" />, "新要素");<br />
-                    console.log(items[1]);
+                    const footerLinks = ["会社概要", "商品一覧", "お問い合わせ"];<br />
+                    footerLinks.splice(<label for="blank-321" class="c-label-input">挿入する位置</label><input type="text" class="c-input js-blank--32-1" id="blank-321" placeholder="①" />, <label for="blank-322" class="c-label-input">削除する個数</label
+                    ><input type="text" class="c-input js-blank--32-2" id="blank-322" placeholder="②" />, "よくある質問");<br />
+                    console.log(footerLinks);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--32">
                     <span class="js-blank-message--32 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--32 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--32 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①0 です。<br />
-                      第2引数に0を指定すると削除せずに挿入のみ行います。
+                      正解は ①2 ②0 です。<br />
+                      第1引数に挿入する位置、第2引数に0を指定すると、何も削除せずに挿入だけを行います。
                     </span>
                   </div>
                   <button data-blank-id="32" class="c-btn">答えを確認</button>
@@ -472,27 +495,41 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q3" class="p-practice">
-              <h2 class="c-title-lesson">配列操作の練習</h2>
-              <div class="p-practice__inner">
-                <div class="js-spliceList-s3"></div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px">
-                  <input type="number" class="c-input js-deleteIndex-s3" placeholder="削除インデックス" style="width: 140px" />
+              <h2 class="c-title-lesson">管理画面のメニューを編集する練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <ul class="p-practice__item js-menuList-s3">
+                  <li class="p-practice__card">ダッシュボード</li>
+                  <li class="p-practice__card">注文管理</li>
+                  <li class="p-practice__card">商品管理</li>
+                  <li class="p-practice__card">顧客管理</li>
+                  <li class="p-practice__card">設定</li>
+                </ul>
+                <div class="p-practice__item">
+                  <input type="number" class="c-input js-deleteIndex-s3" placeholder="削除する番号" />
                   <button type="button" class="c-button-practice js-deleteBtn-s3">削除</button>
-                  <input type="number" class="c-input js-insertIndex-s3" placeholder="挿入インデックス" style="width: 140px" />
-                  <input type="text" class="c-input js-insertInput-s3" placeholder="挿入する値" style="width: 120px" />
-                  <button type="button" class="c-button-practice js-insertBtn-s3">挿入</button>
+                </div>
+                <div class="p-practice__item">
+                  <input type="number" class="c-input js-insertIndex-s3" placeholder="追加する位置の番号" />
+                  <input type="text" class="c-input js-insertInput-s3" placeholder="メニュー名" />
+                  <button type="button" class="c-button-practice js-insertBtn-s3">追加</button>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S3-1</span>
-                <p class="u-flex-1">'.js-deleteBtn-s3'をクリックしたとき、'.js-deleteIndex-s3'に入力されたインデックスの要素をspliceで削除し、'.js-spliceList-s3'の表示を更新する。初期配列：["月曜", "火曜", "水曜",
-                  "木曜", "金曜"]</p>
+                <p class="u-flex-1">
+                  ①"ダッシュボード"、"注文管理"、"商品管理"、"顧客管理"、"設定"の5つのメニューを、この順番で配列にまとめる。<br />
+                  ②'.js-deleteBtn-s3'要素をクリックしたとき、'.js-deleteIndex-s3'要素に入力された番号のメニューを配列から削除する。番号は画面の並び順どおり、先頭を1とする。<br />
+                  ③'.js-menuList-s3'要素の表示を更新する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S3-2</span>
-                <p class="u-flex-1">'.js-insertBtn-s3'をクリックしたとき、'.js-insertIndex-s3'のインデックスに'.js-insertInput-s3'の値をspliceで挿入し、'.js-spliceList-s3'の表示を更新する。</p>
+                <p class="u-flex-1">
+                  ①'.js-insertBtn-s3'要素をクリックしたとき、'.js-insertIndex-s3'要素に入力された番号の位置に'.js-insertInput-s3'要素の値を追加する。番号は先頭を1とする。<br />
+                  ②'.js-menuList-s3'要素の表示を更新する。
+                </p>
               </div>
             </div>
           </div>
@@ -505,7 +542,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step4: 繰り返し処理</p>
               </h2>
-              <span class="c-useCase">配列の中身をループで順番に処理して、まとめて同じ操作を自動で行えるようになります。</span>
+              <span class="c-useCase">配列の中身を1件ずつ順番に処理して、一覧表示や合計金額の計算ができるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -535,24 +572,26 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const nums = [10, 20, 30];<br />
-                    for (let i = 0; i &lt; nums.length; i++) {<br />
-                    &nbsp;&nbsp;console.log(nums[i]);<br />
-                    }
+                    const prices = [1200, 800, 3000];<br />
+                    let total = 0;<br />
+                    for (let i = 0; i &lt; prices.length; i++) {<br />
+                    &nbsp;&nbsp;total += prices[i];<br />
+                    }<br />
+                    console.log(total);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q4_1" value="a" /> 0 1 2</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_1" value="b" /> 10 20 30</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_1" value="c" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_1" value="d" /> [10, 20, 30]</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="a" /> 3</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="b" /> 3000</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="c" /> 5000</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_1" value="d" /> 12008003000</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--41">
                     <span class="js-quiz-message--41 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--41 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--41 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「10 20 30」です。<br />
-                      for文でインデックスiを使って配列の各要素nums[i]を順番に出力します。
+                      正解は「5000」です。<br />
+                      prices[i]で要素を1つずつ取り出し、totalに足していきます。1200 + 800 + 3000 = 5000です。
                     </span>
                   </div>
                   <button data-quiz-id="q4_1" data-step-question-id="41" class="c-btn">答えを確認</button>
@@ -560,24 +599,24 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const fruits = ["りんご", "みかん", "ぶどう"];<br />
-                    fruits.forEach(function(item) {<br />
-                    &nbsp;&nbsp;console.log(item);<br />
+                    const emails = ["user0001@example.com", "user0002@example.com"];<br />
+                    emails.forEach((email) =&gt; {<br />
+                    &nbsp;&nbsp;console.log("送信先：" + email);<br />
                     });
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q4_2" value="a" /> fruits</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_2" value="b" /> 0 1 2</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_2" value="c" /> りんご みかん ぶどう</label>
-                    <label class="p-choice__item"><input type="radio" name="q4_2" value="d" /> undefined</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="a" /> 送信先：user0001@example.com（1行のみ）</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="b" /> 送信先：user0001@example.com、送信先：user0002@example.com（2行）</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="c" /> 送信先：["user0001@example.com", "user0002@example.com"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q4_2" value="d" /> 送信先：undefined</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--42">
                     <span class="js-quiz-message--42 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--42 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--42 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「りんご みかん ぶどう」です。<br />
-                      forEachは配列の各要素を順番に取り出してコールバック関数に渡します。
+                      正解は「2行表示される」です。<br />
+                      forEachは配列の要素を1つずつ取り出して、引数emailに渡しながら処理を繰り返します。
                     </span>
                   </div>
                   <button data-quiz-id="q4_2" data-step-question-id="42" class="c-btn">答えを確認</button>
@@ -593,13 +632,12 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: for文で配列の全要素をコンソールに表示するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: for文でお知らせを先頭から順にすべてコンソールに表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const names = ["田中", "鈴木", "佐藤"];<br />
-                    for (let i = 0; i &lt; names.<label for="blank-411" class="c-label-input">要素数を取得するプロパティ</label
-                    ><input type="text" class="c-input js-blank--41-1" id="blank-411" placeholder="①" />; i++) {<br />
-                    &nbsp;&nbsp;console.log(names[<label for="blank-412" class="c-label-input">インデックス変数</label
-                    ><input type="text" class="c-input js-blank--41-2" id="blank-412" placeholder="②" />]);<br />
+                    const notices = ["定期メンテナンス", "新機能リリース", "料金改定"];<br />
+                    for (let i = <label for="blank-411" class="c-label-input">開始する番号</label><input type="text" class="c-input js-blank--41-1" id="blank-411" placeholder="①" />; i &lt; notices.<label for="blank-412" class="c-label-input">要素数を取得するプロパティ</label
+                    ><input type="text" class="c-input js-blank--41-2" id="blank-412" placeholder="②" />; i++) {<br />
+                    &nbsp;&nbsp;console.log(notices[i]);<br />
                     }
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--41">
@@ -607,18 +645,18 @@
                     <span class="js-blank-correct--41 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--41 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①length ②i です。<br />
-                      lengthで要素数を取得し、names[i]でi番目の要素を取得します。
+                      正解は ①0 ②length です。<br />
+                      インデックスは0から始まるのでiも0から始め、lengthより小さい間だけ繰り返します。
                     </span>
                   </div>
                   <button data-blank-id="41" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: forEachで配列の全要素をコンソールに表示するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 注文番号を1件ずつコンソールに表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const prices = [100, 200, 300];<br />
-                    prices.<label for="blank-421" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--42-1" id="blank-421" placeholder="①" />(function(price) {<br />
-                    &nbsp;&nbsp;console.log(price);<br />
+                    const orderIds = ["A1001", "A1002", "A1003"];<br />
+                    orderIds.<label for="blank-421" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--42-1" id="blank-421" placeholder="①" />((orderId) =&gt; {<br />
+                    &nbsp;&nbsp;console.log(<label for="blank-422" class="c-label-input">引数名</label><input type="text" class="c-input js-blank--42-2" id="blank-422" placeholder="②" />);<br />
                     });
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--42">
@@ -626,8 +664,8 @@
                     <span class="js-blank-correct--42 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--42 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①forEach です。<br />
-                      forEachメソッドで配列の各要素を順番に処理できます。
+                      正解は ①forEach ②orderId です。<br />
+                      forEachは要素を1つずつ引数orderIdに渡して処理します。インデックスを自分で管理しなくてよいため、実務ではよく使われます。
                     </span>
                   </div>
                   <button data-blank-id="42" class="c-btn">答えを確認</button>
@@ -641,27 +679,34 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q4" class="p-practice">
-              <h2 class="c-title-lesson">ループ処理の練習</h2>
-              <div class="p-practice__inner">
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-loopBtn-s4">for文で表示</button>
-                  <div class="js-loopResult-s4"></div>
+              <h2 class="c-title-lesson">通知一覧とカート合計の練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-noticeBtn-s4">通知を表示</button>
+                  <ul class="p-practice__item js-noticeList-s4"></ul>
                 </div>
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-forEachBtn-s4">forEachで表示</button>
-                  <div class="js-forEachResult-s4"></div>
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-totalBtn-s4">合計を計算</button>
+                  <p class="p-practice__display js-cartTotal-s4">ここに合計金額が表示されます。</p>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S4-1</span>
-                <p class="u-flex-1">'.js-loopBtn-s4'をクリックしたとき、for文を使って以下の配列を順番にループし、各要素を'.js-loopResult-s4'に追加表示する。const members = ["山田", "田中", "鈴木", "佐藤",
-                  "高橋"];</p>
+                <p class="u-flex-1">
+                  ①"定期メンテナンスのお知らせ"、"新機能リリースのお知らせ"、"料金改定のお知らせ"の3件の通知を配列にまとめる。<br />
+                  ②'.js-noticeBtn-s4'要素をクリックしたとき、通知を1件ずつ'p-practice__card'クラス付きのli要素にして'.js-noticeList-s4'要素に追加する。<br />
+                  ③何回クリックしても、通知が重複して表示されないようにする。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S4-2</span>
-                <p class="u-flex-1">'.js-forEachBtn-s4'をクリックしたとき、forEachを使って同じ配列をループし、各要素の文字数を'.js-forEachResult-s4'に「山田：2文字」の形式で表示する。</p>
+                <p class="u-flex-1">
+                  ①カート内の商品の金額1200、800、3300を、数値の配列にまとめる。<br />
+                  ②'.js-totalBtn-s4'要素をクリックしたとき、金額をすべて合計する。<br />
+                  ③'.js-cartTotal-s4'要素に"合計：5,300円"の形式で表示する。金額は3桁ごとにカンマで区切る。
+                </p>
               </div>
             </div>
           </div>
@@ -674,7 +719,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step5: 条件で探す・絞る</p>
               </h2>
-              <span class="c-useCase">配列の中から条件に合う要素を検索・絞り込みして、必要なデータだけを取り出せるようになります。</span>
+              <span class="c-useCase">一覧データから条件に合うものを探したり絞り込んだりして、必要なデータだけを取り出せるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -704,22 +749,22 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const fruits = ["りんご", "バナナ", "みかん"];<br />
-                    console.log(fruits.includes("バナナ"));
+                    const permissions = ["read", "write"];<br />
+                    console.log(permissions.includes("delete"));
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q5_1" value="a" /> "バナナ"</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_1" value="b" /> 1</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_1" value="c" /> true</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_1" value="d" /> false</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="a" /> true</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="b" /> false</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="c" /> -1</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_1" value="d" /> "delete"</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--51">
                     <span class="js-quiz-message--51 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--51 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--51 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「true」です。<br />
-                      includesは配列に指定した要素が含まれるかをtrueまたはfalseで返します。
+                      正解は「false」です。<br />
+                      includesは指定した値が配列に含まれるかをtrue / falseで返します。"delete"は含まれていないのでfalseです。
                     </span>
                   </div>
                   <button data-quiz-id="q5_1" data-step-question-id="51" class="c-btn">答えを確認</button>
@@ -727,25 +772,25 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const numbers = [3, 7, 12, 5, 9];<br />
-                    const result = numbers.find(function(n) {<br />
-                    &nbsp;&nbsp;return n &gt; 8;<br />
+                    const cartPrices = [800, 3500, 12000, 2500];<br />
+                    const firstHighPrice = cartPrices.find((price) =&gt; {<br />
+                    &nbsp;&nbsp;return price &gt;= 3000;<br />
                     });<br />
-                    console.log(result);
+                    console.log(firstHighPrice);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q5_2" value="a" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_2" value="b" /> 9</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_2" value="c" /> 12</label>
-                    <label class="p-choice__item"><input type="radio" name="q5_2" value="d" /> true</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="a" /> 800</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="b" /> 12000</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="c" /> 3500</label>
+                    <label class="p-choice__item"><input type="radio" name="q5_2" value="d" /> [3500, 12000]</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--52">
                     <span class="js-quiz-message--52 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--52 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--52 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「12」です。<br />
-                      findは条件を満たす最初の要素を返します。8より大きい最初の要素は12です。
+                      正解は「3500」です。<br />
+                      findは条件に合う最初の1件だけを返します。3000以上は3500と12000ですが、先に見つかる3500が返ります。すべて取り出したいときはfilterを使います。
                     </span>
                   </div>
                   <button data-quiz-id="q5_2" data-step-question-id="52" class="c-btn">答えを確認</button>
@@ -761,39 +806,42 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 配列に要素が含まれるか確認するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: カート内で最初に見つかる5000円以上の商品金額を表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const tags = ["新着", "セール", "人気"];<br />
-                    console.log(tags.<label for="blank-511" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--51-1" id="blank-511" placeholder="①" />("セール"));
+                    const cartPrices = [1200, 4800, 9800, 6500];<br />
+                    const firstOverPrice = cartPrices.<label for="blank-511" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--51-1" id="blank-511" placeholder="①" />((price) =&gt; {<br />
+                    &nbsp;&nbsp;return price <label for="blank-512" class="c-label-input">比較演算子</label><input type="text" class="c-input js-blank--51-2" id="blank-512" placeholder="②" /> 5000;<br />
+                    });<br />
+                    console.log(firstOverPrice);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--51">
                     <span class="js-blank-message--51 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--51 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--51 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①includes です。<br />
-                      includesメソッドで配列に指定の要素が含まれるか確認できます。
+                      正解は ①find ②&gt;= です。<br />
+                      findは条件に合う最初の1件を返します。「5000円以上」は&gt;=で判定するので、9800が表示されます。
                     </span>
                   </div>
                   <button data-blank-id="51" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 条件に合う要素をすべて取り出すコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 注文ステータスの一覧から"未発送"だけを取り出し、その件数を表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const prices = [500, 1200, 300, 800, 2000];<br />
-                    const expensive = prices.<label for="blank-521" class="c-label-input">メソッド名</label
-                    ><input type="text" class="c-input js-blank--52-1" id="blank-521" placeholder="①" />(function(price) {<br />
-                    &nbsp;&nbsp;return price &gt;= 1000;<br />
+                    const statuses = ["未発送", "発送済み", "未発送", "キャンセル"];<br />
+                    const unshippedStatuses = statuses.<label for="blank-521" class="c-label-input">メソッド名</label
+                    ><input type="text" class="c-input js-blank--52-1" id="blank-521" placeholder="①" />((status) =&gt; {<br />
+                    &nbsp;&nbsp;return status === "未発送";<br />
                     });<br />
-                    console.log(expensive);
+                    console.log(unshippedStatuses.<label for="blank-522" class="c-label-input">プロパティ名</label><input type="text" class="c-input js-blank--52-2" id="blank-522" placeholder="②" />);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--52">
                     <span class="js-blank-message--52 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--52 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--52 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①filter です。<br />
-                      filterメソッドで条件に合う要素だけを取り出した新しい配列を作れます。
+                      正解は ①filter ②length です。<br />
+                      filterは条件に合う要素だけを集めた新しい配列を返します。返ってくるのは配列なので、lengthで件数（2）を取得できます。
                     </span>
                   </div>
                   <button data-blank-id="52" class="c-btn">答えを確認</button>
@@ -807,29 +855,36 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q5" class="p-practice">
-              <h2 class="c-title-lesson">検索・絞り込みの練習</h2>
-              <div class="p-practice__inner">
-                <div class="p-practice__card">
-                  <input type="text" class="c-input js-searchInput-s5" placeholder="野菜名を入力" />
-                  <button type="button" class="c-button-practice js-searchBtn-s5">検索</button>
-                  <p class="js-searchResult-s5"></p>
+              <h2 class="c-title-lesson">登録チェックと注文の絞り込みの練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <input type="text" class="c-input js-emailInput-s5" placeholder="メールアドレスを入力" />
+                  <button type="button" class="c-button-practice js-checkBtn-s5">登録チェック</button>
+                  <p class="p-practice__display js-checkResult-s5">ここに判定結果が表示されます。</p>
                 </div>
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-filterBtn-s5">1000円以上を絞り込む</button>
-                  <div class="js-filterResult-s5"></div>
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-filterBtn-s5">1万円以上の注文を表示</button>
+                  <ul class="p-practice__item js-orderList-s5"></ul>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S5-1</span>
-                <p class="u-flex-1">'.js-searchBtn-s5'をクリックしたとき、'.js-searchInput-s5'の値が配列に含まれるかincludesで確認し、'.js-searchResult-s5'に"含まれています"または"含まれていません"と表示する。const
-                  vegetables = ["キャベツ", "にんじん", "たまねぎ", "じゃがいも", "ほうれん草"];</p>
+                <p class="u-flex-1">
+                  ①登録済みのメールアドレス"user0001@example.com"、"user0002@example.com"、"user0003@example.com"を配列にまとめる。<br />
+                  ②'.js-checkBtn-s5'要素をクリックしたとき、'.js-emailInput-s5'要素に入力されたメールアドレスが配列に含まれているか判定する。入力値の前後に空白が入っていても、正しく判定できるようにする。<br />
+                  ③含まれていれば'.js-checkResult-s5'要素に"すでに登録されています"、含まれていなければ"登録できます"と表示する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S5-2</span>
-                <p class="u-flex-1">'.js-filterBtn-s5'をクリックしたとき、以下の配列から価格が1000円以上の商品をfilterで絞り込み、商品名を'.js-filterResult-s5'に表示する。const products = [{ name: "ノートPC", price:
-                  89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "ケーブル", price: 800 }, { name: "モニター", price: 45000 }];</p>
+                <p class="u-flex-1">
+                  ①今月の注文金額2800、3500、120000、8000、32000を、この順番で数値の配列にまとめる。<br />
+                  ②'.js-filterBtn-s5'要素をクリックしたとき、10000円以上の金額だけを取り出す。<br />
+                  ③取り出した金額を、高い順に並べる。<br />
+                  ④'.js-orderList-s5'要素に'p-practice__card'クラス付きのli要素で"120000円"の形式で表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -842,7 +897,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step6: 配列変換（map）</p>
               </h2>
-              <span class="c-useCase">mapを使って配列の全要素を変換した新しい配列を作れるようになります。</span>
+              <span class="c-useCase">mapを使って、APIから受け取ったデータを画面表示用の形に変換できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -872,25 +927,25 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const nums = [1, 2, 3];<br />
-                    const doubled = nums.map(function(n) {<br />
-                    &nbsp;&nbsp;return n * 2;<br />
+                    const prices = [1000, 2000, 3000];<br />
+                    const salePrices = prices.map((price) =&gt; {<br />
+                    &nbsp;&nbsp;return price - 500;<br />
                     });<br />
-                    console.log(doubled[2]);
+                    console.log(salePrices);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q6_1" value="a" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_1" value="b" /> 6</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_1" value="c" /> [2, 4, 6]</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_1" value="d" /> 2</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="a" /> [1000, 2000, 3000]</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="b" /> 4500</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="c" /> [500]</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_1" value="d" /> [500, 1500, 2500]</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--61">
                     <span class="js-quiz-message--61 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--61 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--61 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「6」です。<br />
-                      mapで各要素を2倍にした新しい配列を作ります。doubled[2]は3番目の要素 3×2=6 です。
+                      正解は「[500, 1500, 2500]」です。<br />
+                      mapはすべての要素に同じ処理をして、その結果を集めた新しい配列を返します。元の配列pricesは変わりません。
                     </span>
                   </div>
                   <button data-quiz-id="q6_1" data-step-question-id="61" class="c-btn">答えを確認</button>
@@ -898,16 +953,16 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const names = ["田中", "鈴木"];<br />
-                    const greetings = names.map(function(name) {<br />
-                    &nbsp;&nbsp;return "こんにちは、" + name;<br />
+                    const accountNames = ["user0001", "user0002"];<br />
+                    const emails = accountNames.map((accountName) =&gt; {<br />
+                    &nbsp;&nbsp;return accountName + "@example.com";<br />
                     });<br />
-                    console.log(greetings[0]);
+                    console.log(emails);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" /> "田中"</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="b" /> "こんにちは"</label>
-                    <label class="p-choice__item"><input type="radio" name="q6_2" value="c" /> "こんにちは、田中"</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="a" /> ["user0001", "user0002"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="b" /> "user0001@example.com"</label>
+                    <label class="p-choice__item"><input type="radio" name="q6_2" value="c" /> ["user0001@example.com", "user0002@example.com"]</label>
                     <label class="p-choice__item"><input type="radio" name="q6_2" value="d" /> undefined</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--62">
@@ -915,8 +970,8 @@
                     <span class="js-quiz-correct--62 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--62 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「"こんにちは、田中"」です。<br />
-                      mapで各要素に文字列を結合した新しい配列を作ります。[0]は最初の要素です。
+                      正解は「["user0001@example.com", "user0002@example.com"]」です。<br />
+                      各アカウント名の末尾に"@example.com"を付けた新しい配列ができます。元の配列accountNamesは変わりません。
                     </span>
                   </div>
                   <button data-quiz-id="q6_2" data-step-question-id="62" class="c-btn">答えを確認</button>
@@ -932,42 +987,42 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: mapで各要素を変換するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: 商品名の先頭に"【在庫あり】"を付けた配列を作るコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const prices = [100, 200, 300];<br />
-                    const taxed = prices.<label for="blank-611" class="c-label-input">メソッド名</label
-                    ><input type="text" class="c-input js-blank--61-1" id="blank-611" placeholder="①" />(function(price) {<br />
-                    &nbsp;&nbsp;return price * 1.1;<br />
+                    const productNames = ["ノートPC", "モニター"];<br />
+                    const labels = productNames.<label for="blank-611" class="c-label-input">メソッド名</label
+                    ><input type="text" class="c-input js-blank--61-1" id="blank-611" placeholder="①" />((productName) =&gt; {<br />
+                    &nbsp;&nbsp;return "【在庫あり】" + <label for="blank-612" class="c-label-input">引数名</label><input type="text" class="c-input js-blank--61-2" id="blank-612" placeholder="②" />;<br />
                     });<br />
-                    console.log(taxed[0]);
+                    console.log(labels);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--61">
                     <span class="js-blank-message--61 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--61 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--61 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①map です。<br />
-                      mapメソッドは各要素を変換した新しい配列を返します。元の配列は変更されません。
+                      正解は ①map ②productName です。<br />
+                      mapは各要素を引数productNameに渡し、returnした値を集めた新しい配列を返します。
                     </span>
                   </div>
                   <button data-blank-id="61" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: mapで文字列を加工するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: 各商品の金額に送料500円を足した配列を作るコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const items = ["りんご", "バナナ", "みかん"];<br />
-                    const labeled = items.map(function(item) {<br />
-                    &nbsp;&nbsp;return "商品：" + <label for="blank-621" class="c-label-input">変数名</label><input type="text" class="c-input js-blank--62-1" id="blank-621" placeholder="①" />;<br />
+                    const prices = [1000, 2500];<br />
+                    const totalPrices = prices.<label for="blank-621" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--62-1" id="blank-621" placeholder="①" />((price) =&gt; {<br />
+                    &nbsp;&nbsp;return price + <label for="blank-622" class="c-label-input">数値</label><input type="text" class="c-input js-blank--62-2" id="blank-622" placeholder="②" />;<br />
                     });<br />
-                    console.log(labeled[1]);
+                    console.log(totalPrices);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--62">
                     <span class="js-blank-message--62 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--62 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--62 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①item です。<br />
-                      コールバック関数の引数itemに各要素が入るので、それを使って文字列を組み立てます。
+                      正解は ①map ②500 です。<br />
+                      mapで各金額に500を足した新しい配列を作ります。結果は[1500, 3000]です。
                     </span>
                   </div>
                   <button data-blank-id="62" class="c-btn">答えを確認</button>
@@ -981,28 +1036,34 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q6" class="p-practice">
-              <h2 class="c-title-lesson">mapで変換する練習</h2>
-              <div class="p-practice__inner">
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-mapBtn-s6">税込価格を表示</button>
-                  <div class="js-mapResult-s6"></div>
+              <h2 class="c-title-lesson">表示用データに変換する練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-taxBtn-s6">税込価格を表示</button>
+                  <ul class="p-practice__item js-priceList-s6"></ul>
                 </div>
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-labelBtn-s6">完了ラベルを付ける</button>
-                  <div class="js-labelResult-s6"></div>
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-emailBtn-s6">送信先リストを作成</button>
+                  <ul class="p-practice__item js-emailList-s6"></ul>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S6-1</span>
-                <p class="u-flex-1">'.js-mapBtn-s6'をクリックしたとき、以下の配列をmapで変換して各価格を1.1倍（税込み）にし、'.js-mapResult-s6'に「商品名：税込価格円」の形式で表示する。const goods = [{ name:
-                  "コーヒー", price: 500 }, { name: "サンドイッチ", price: 650 }, { name: "サラダ", price: 480 }];</p>
+                <p class="u-flex-1">
+                  ①商品の金額120000、3480、2980を、この順番で数値の配列にまとめる。<br />
+                  ②'.js-taxBtn-s6'要素をクリックしたとき、各金額を"132000円"の形式の税込価格の文字列に変換した新しい配列を作る。税込価格は金額を1.1倍し、小数点以下を切り捨てた金額とする。<br />
+                  ③新しい配列の要素を'.js-priceList-s6'要素に'p-practice__card'クラス付きのli要素で表示する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S6-2</span>
-                <p class="u-flex-1">'.js-labelBtn-s6'をクリックしたとき、以下の配列をmapで変換して各要素に"【完了】"を先頭に付けた新しい配列を作り、'.js-labelResult-s6'に一覧表示する。const tasks = ["資料作成",
-                  "メール返信", "打ち合わせ", "報告書提出"];</p>
+                <p class="u-flex-1">
+                  ①アカウント名"user0001"、"user0002"、"user0003"を、この順番で配列にまとめる。<br />
+                  ②'.js-emailBtn-s6'要素をクリックしたとき、各アカウント名の末尾に"@example.com"を付けたメールアドレスの新しい配列を作る。先頭のアカウントは管理者なので、そのメールアドレスだけ末尾に"（管理者）"を付ける。<br />
+                  ③新しい配列の要素を'.js-emailList-s6'要素に'p-practice__card'クラス付きのli要素で表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -1015,7 +1076,7 @@
                 <span class="material-icons">auto_awesome</span>
                 <p>Step7: 文字列・配列変換</p>
               </h2>
-              <span class="c-useCase">joinで配列を文字列に、splitで文字列を配列に変換できるようになります。</span>
+              <span class="c-useCase">joinで配列を文字列に、splitで文字列を配列に変換して、パンくずリストやタグ入力を作れるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -1045,22 +1106,22 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const words = ["JavaScript", "は", "楽しい"];<br />
-                    console.log(words.join(""));
+                    const breadcrumb = ["ホーム", "商品一覧", "ノートPC"];<br />
+                    console.log(breadcrumb.join(" &gt; "));
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="a" /> "JavaScript,は,楽しい"</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="b" /> "JavaScriptは楽しい"</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="c" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_1" value="d" /> ["JavaScript","は","楽しい"]</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="a" /> ホーム,商品一覧,ノートPC</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="b" /> ホーム &gt; 商品一覧 &gt; ノートPC</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="c" /> ホーム商品一覧ノートPC</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_1" value="d" /> ["ホーム", "商品一覧", "ノートPC"]</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--71">
                     <span class="js-quiz-message--71 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--71 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--71 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「"JavaScriptは楽しい"」です。<br />
-                      join("")は配列の要素を区切り文字なしで結合した文字列を返します。
+                      正解は「ホーム &gt; 商品一覧 &gt; ノートPC」です。<br />
+                      joinは配列の要素を、引数で指定した区切り文字でつないだ文字列を返します。引数を省略するとカンマ区切りになります。
                     </span>
                   </div>
                   <button data-quiz-id="q7_1" data-step-question-id="71" class="c-btn">答えを確認</button>
@@ -1068,23 +1129,23 @@
                 <div class="p-quiz__item js-quizItem">
                   <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
                   <div class="c-code u-mb-16">
-                    const text = "りんご,バナナ,みかん";<br />
-                    const fruits = text.split(",");<br />
-                    console.log(fruits.length);
+                    const csvRow = "U0001,user0001@example.com,admin";<br />
+                    const columns = csvRow.split(",");<br />
+                    console.log(columns[2]);
                   </div>
                   <div class="p-choice js-choices">
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="a" /> 1</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="b" /> 2</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="c" /> 3</label>
-                    <label class="p-choice__item"><input type="radio" name="q7_2" value="d" /> "りんご"</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="a" /> U0001</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="b" /> admin</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="c" /> user0001@example.com</label>
+                    <label class="p-choice__item"><input type="radio" name="q7_2" value="d" /> undefined</label>
                   </div>
                   <div class="p-result u-mb-10 js-quiz-result--72">
                     <span class="js-quiz-message--72 u-color-message u-hide">選択肢を選んでください。</span>
                     <span class="js-quiz-correct--72 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-quiz-incorrect--72 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は「3」です。<br />
-                      split(",")はカンマで文字列を分割して配列にします。3つに分かれるのでlengthは3です。
+                      正解は「admin」です。<br />
+                      split(",")はカンマで文字列を分割して配列にします。["U0001", "user0001@example.com", "admin"]の[2]は"admin"です。CSVデータの読み込みでよく使います。
                     </span>
                   </div>
                   <button data-quiz-id="q7_2" data-step-question-id="72" class="c-btn">答えを確認</button>
@@ -1100,37 +1161,38 @@
             <div class="p-blank">
               <div class="p-blank__container">
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q1: 配列を区切り文字で結合するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q1: カンマ区切りのタグを配列に分け、" / "区切りの文字列につなぎ直すコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const tags = ["初心者", "JavaScript", "プログラミング"];<br />
-                    const result = tags.<label for="blank-711" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--71-1" id="blank-711" placeholder="①" />("・");<br />
-                    console.log(result);
+                    const tagText = "新着,セール,送料無料";<br />
+                    const productTags = tagText.<label for="blank-711" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--71-1" id="blank-711" placeholder="①" />(",");<br />
+                    const displayText = productTags.<label for="blank-712" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--71-2" id="blank-712" placeholder="②" />(" / ");<br />
+                    console.log(displayText);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--71">
                     <span class="js-blank-message--71 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--71 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--71 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①join です。<br />
-                      joinメソッドで配列の要素を指定した区切り文字でつなげた文字列を作れます。
+                      正解は ①split ②join です。<br />
+                      splitで文字列を配列に分け、joinで配列を指定した区切り文字でつないだ文字列に戻します。結果は"新着 / セール / 送料無料"です。
                     </span>
                   </div>
                   <button data-blank-id="71" class="c-btn">答えを確認</button>
                 </div>
                 <div class="p-blank__item js-blankItem">
-                  <h4 class="c-title-question">Q2: 文字列を区切り文字で分割するコードの空欄を埋めてください。</h4>
+                  <h4 class="c-title-question">Q2: CSVの1行を分割し、3列目の権限を表示するコードの空欄を埋めてください。</h4>
                   <div class="c-code -blank">
-                    const csv = "東京,大阪,名古屋";<br />
-                    const cities = csv.<label for="blank-721" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--72-1" id="blank-721" placeholder="①" />(",");<br />
-                    console.log(cities[0]);
+                    const csvRow = "U0002,user0002@example.com,editor";<br />
+                    const columns = csvRow.<label for="blank-721" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--72-1" id="blank-721" placeholder="①" />(",");<br />
+                    console.log(columns[<label for="blank-722" class="c-label-input">インデックス番号</label><input type="text" class="c-input js-blank--72-2" id="blank-722" placeholder="②" />]);
                   </div>
                   <div class="p-result u-mb-10 js-blank-result--72">
                     <span class="js-blank-message--72 u-color-message u-hide">すべての空欄を埋めてください</span>
                     <span class="js-blank-correct--72 u-color-normal u-hide">〇 正解！</span>
                     <span class="js-blank-incorrect--72 u-color-warning u-hide">
                       ✕ 不正解。<br />
-                      正解は ①split です。<br />
-                      splitメソッドで文字列を指定した区切り文字で分割して配列にできます。
+                      正解は ①split ②2 です。<br />
+                      splitで3つの要素に分かれた配列ができます。インデックスは0から始まるため、3列目は[2]です。
                     </span>
                   </div>
                   <button data-blank-id="72" class="c-btn">答えを確認</button>
@@ -1144,28 +1206,34 @@
               <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
             </div>
             <div id="q7" class="p-practice">
-              <h2 class="c-title-lesson">join / split の練習</h2>
-              <div class="p-practice__inner">
-                <div class="p-practice__card">
-                  <button type="button" class="c-button-practice js-joinBtn-s7">パンくずリストを表示</button>
-                  <p class="js-joinResult-s7"></p>
+              <h2 class="c-title-lesson">パンくずリストとタグ入力の練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-breadcrumbBtn-s7">パンくずリストを表示</button>
+                  <p class="p-practice__display js-breadcrumb-s7">ここにパンくずリストが表示されます。</p>
                 </div>
-                <div class="p-practice__card">
-                  <input type="text" class="c-input js-splitInput-s7" placeholder="例：りんご,バナナ,みかん" />
-                  <button type="button" class="c-button-practice js-splitBtn-s7">分割して表示</button>
-                  <div class="js-splitResult-s7"></div>
+                <div class="p-practice__item">
+                  <input type="text" class="c-input js-tagInput-s7" placeholder="例：PC, 周辺機器, セール" />
+                  <button type="button" class="c-button-practice js-tagBtn-s7">タグを登録</button>
+                  <ul class="p-practice__item js-tagList-s7"></ul>
                 </div>
               </div>
             </div>
             <div class="p-task">
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S7-1</span>
-                <p class="u-flex-1">'.js-joinBtn-s7'をクリックしたとき、以下の配列をjoinで「 / 」区切りの文字列に変換して'.js-joinResult-s7'に表示する。const breadcrumb = ["ホーム", "カテゴリ", "商品一覧",
-                  "商品詳細"];</p>
+                <p class="u-flex-1">
+                  ①"ホーム"、"PC・周辺機器"、"ノートPC"、"商品詳細"の4つのページ名を、この順番で配列にまとめる。<br />
+                  ②'.js-breadcrumbBtn-s7'要素をクリックしたとき、配列を" &gt; "でつないだ文字列にして'.js-breadcrumb-s7'要素に表示する。
+                </p>
               </div>
               <div class="p-task__item">
                 <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S7-2</span>
-                <p class="u-flex-1">'.js-splitBtn-s7'をクリックしたとき、'.js-splitInput-s7'に入力されたカンマ区切りの文字列をsplitで配列に変換して、各要素を'.js-splitResult-s7'にリスト表示する。</p>
+                <p class="u-flex-1">
+                  ①'.js-tagBtn-s7'要素をクリックしたとき、'.js-tagInput-s7'要素に入力されたカンマ区切りの文字列を、タグごとに分けた配列にする。<br />
+                  ②各タグの前後の空白を取り除き、空のタグは除外する（例："PC, 周辺機器, , セール"は3件になる）。<br />
+                  ③残ったタグを'.js-tagList-s7'要素に'p-practice__card'クラス付きのli要素で表示する。
+                </p>
               </div>
             </div>
           </div>
@@ -1176,9 +1244,208 @@
             <div class="p-section__title--content">
               <h2 class="p-section__title--top">
                 <span class="material-icons">auto_awesome</span>
-                <p>Step8: 総合演習</p>
+                <p>Step8: オブジェクトの配列</p>
               </h2>
-              <span class="c-useCase">これまで学んだ配列操作を組み合わせて、実務で使えるデータ管理が自分で実装できるようになります。</span>
+              <span class="c-useCase">APIから返ってくる注文一覧やユーザー一覧のように、1件に複数の項目を持つデータの配列を扱えるようになります。</span>
+            </div>
+            <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
+              <span class="material-icons">menu_book</span>
+            </a>
+          </div>
+          <div class="p-section__step js-tab">
+            <button class="c-tab js-tab-btn is-active" data-tab="quiz8">
+              <span class="material-icons">live_help</span>
+              出力予想
+            </button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="blank8">
+              <span class="material-icons">build</span>
+              コード補完
+            </button>
+            <button class="c-tab js-tab-btn u-ml-8" data-tab="task8">
+              <span class="material-icons">edit</span>
+              提出課題
+            </button>
+          </div>
+          <!-- 出力予想 -->
+          <div class="p-section__tab js-tab-content is-active" data-tab-content="quiz8">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-quiz">
+              <div class="p-quiz__container">
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q1: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code u-mb-16">
+                    const users = [<br />
+                    &nbsp;&nbsp;{ userId: "U0001", role: "admin" },<br />
+                    &nbsp;&nbsp;{ userId: "U0002", role: "editor" },<br />
+                    ];<br />
+                    console.log(users[1].role);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q8_1" value="a" /> admin</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_1" value="b" /> editor</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_1" value="c" /> U0002</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_1" value="d" /> undefined</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--81">
+                    <span class="js-quiz-message--81 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--81 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--81 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「editor」です。<br />
+                      users[1]で2番目のユーザーのデータを取り出し、.roleでその中の権限を取り出します。「何番目か」→「どの項目か」の順に指定します。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q8_1" data-step-question-id="81" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-quiz__item js-quizItem">
+                  <h4 class="c-title-question">Q2: コンソールに表示される内容として正しいものを選んでください。</h4>
+                  <div class="c-code u-mb-16">
+                    const users = [<br />
+                    &nbsp;&nbsp;{ userId: "U0001", role: "admin" },<br />
+                    &nbsp;&nbsp;{ userId: "U0002", role: "editor" },<br />
+                    &nbsp;&nbsp;{ userId: "U0003", role: "editor" },<br />
+                    ];<br />
+                    const editor = users.find((user) =&gt; {<br />
+                    &nbsp;&nbsp;return user.role === "editor";<br />
+                    });<br />
+                    console.log(editor.userId);
+                  </div>
+                  <div class="p-choice js-choices">
+                    <label class="p-choice__item"><input type="radio" name="q8_2" value="a" /> U0001</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_2" value="b" /> U0003</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_2" value="c" /> U0002</label>
+                    <label class="p-choice__item"><input type="radio" name="q8_2" value="d" /> ["U0002", "U0003"]</label>
+                  </div>
+                  <div class="p-result u-mb-10 js-quiz-result--82">
+                    <span class="js-quiz-message--82 u-color-message u-hide">選択肢を選んでください。</span>
+                    <span class="js-quiz-correct--82 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-quiz-incorrect--82 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は「U0002」です。<br />
+                      引数userにはユーザー1件分のデータが入るので、user.roleで権限を比べられます。findは条件に合う最初の1件だけを返します。
+                    </span>
+                  </div>
+                  <button data-quiz-id="q8_2" data-step-question-id="82" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- コード補完 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="blank8">
+            <div class="p-desc">
+              <p class="c-text">提出は必要ありません。コードに触れて慣れてみましょう。</p>
+            </div>
+            <div class="p-blank">
+              <div class="p-blank__container">
+                <div class="p-blank__item js-blankItem">
+                  <h4 class="c-title-question">Q1: ユーザーIDが"U0002"のユーザーを探し、そのメールアドレスを表示するコードの空欄を埋めてください。</h4>
+                  <div class="c-code -blank">
+                    const users = [<br />
+                    &nbsp;&nbsp;{ userId: "U0001", email: "user0001@example.com" },<br />
+                    &nbsp;&nbsp;{ userId: "U0002", email: "user0002@example.com" },<br />
+                    ];<br />
+                    const targetUser = users.<label for="blank-811" class="c-label-input">メソッド名</label><input type="text" class="c-input js-blank--81-1" id="blank-811" placeholder="①" />((user) =&gt; {<br />
+                    &nbsp;&nbsp;return user.userId === "U0002";<br />
+                    });<br />
+                    console.log(targetUser.<label for="blank-812" class="c-label-input">プロパティ名</label><input type="text" class="c-input js-blank--81-2" id="blank-812" placeholder="②" />);
+                  </div>
+                  <div class="p-result u-mb-10 js-blank-result--81">
+                    <span class="js-blank-message--81 u-color-message u-hide">すべての空欄を埋めてください</span>
+                    <span class="js-blank-correct--81 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-blank-incorrect--81 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は ①find ②email です。<br />
+                      findは条件に合う最初の1件をデータのまま返すので、.emailでメールアドレスを取り出せます。
+                    </span>
+                  </div>
+                  <button data-blank-id="81" class="c-btn">答えを確認</button>
+                </div>
+                <div class="p-blank__item js-blankItem">
+                  <h4 class="c-title-question">Q2: 未発送の注文だけを取り出すコードの空欄を埋めてください。</h4>
+                  <div class="c-code -blank">
+                    const orders = [<br />
+                    &nbsp;&nbsp;{ orderId: "A1001", status: "未発送" },<br />
+                    &nbsp;&nbsp;{ orderId: "A1002", status: "発送済み" },<br />
+                    &nbsp;&nbsp;{ orderId: "A1003", status: "未発送" },<br />
+                    ];<br />
+                    const unshippedOrders = orders.<label for="blank-821" class="c-label-input">メソッド名</label
+                    ><input type="text" class="c-input js-blank--82-1" id="blank-821" placeholder="①" />((order) =&gt; {<br />
+                    &nbsp;&nbsp;return order.<label for="blank-822" class="c-label-input">プロパティ名</label><input type="text" class="c-input js-blank--82-2" id="blank-822" placeholder="②" /> === "未発送";<br />
+                    });<br />
+                    console.log(unshippedOrders);
+                  </div>
+                  <div class="p-result u-mb-10 js-blank-result--82">
+                    <span class="js-blank-message--82 u-color-message u-hide">すべての空欄を埋めてください</span>
+                    <span class="js-blank-correct--82 u-color-normal u-hide">〇 正解！</span>
+                    <span class="js-blank-incorrect--82 u-color-warning u-hide">
+                      ✕ 不正解。<br />
+                      正解は ①filter ②status です。<br />
+                      引数orderに注文1件分のデータが入るので、order.statusでステータスを比べます。A1001とA1003の2件が取り出されます。
+                    </span>
+                  </div>
+                  <button data-blank-id="82" class="c-btn">答えを確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 提出課題 -->
+          <div class="p-section__tab js-tab-content" data-tab-content="task8">
+            <div class="p-desc">
+              <p class="c-text">提出課題です。curriculum.jsファイルに実装してください。</p>
+            </div>
+            <div id="q8" class="p-practice">
+              <h2 class="c-title-lesson">注文データ・ユーザーデータを扱う練習</h2>
+              <div class="p-practice__inner -column -align-start -gap-16">
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-filterBtn-s8">未発送の注文を表示</button>
+                  <ul class="p-practice__item js-orderList-s8"></ul>
+                </div>
+                <div class="p-practice__item">
+                  <button type="button" class="c-button-practice js-emailBtn-s8">送信先リストを作成</button>
+                  <ul class="p-practice__item js-emailList-s8"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="p-task">
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-1</span>
+                <p class="u-flex-1">
+                  ①次の5件の注文を、注文番号・商品名・金額・ステータスを持つデータとして配列にまとめる。<br />
+                  &nbsp;&nbsp;・"A1001"、"USBハブ"、2800円、"未発送"<br />
+                  &nbsp;&nbsp;・"A1002"、"ワイヤレスマウス"、3500円、"発送済み"<br />
+                  &nbsp;&nbsp;・"A1003"、"ノートPC"、120000円、"未発送"<br />
+                  &nbsp;&nbsp;・"A1004"、"キーボード"、8000円、"発送済み"<br />
+                  &nbsp;&nbsp;・"A1005"、"モニター"、32000円、"未発送"<br />
+                  ②'.js-filterBtn-s8'要素をクリックしたとき、ステータスが"未発送"の注文だけを取り出す。<br />
+                  ③取り出した注文を、金額が高い順に並べる。<br />
+                  ④'.js-orderList-s8'要素に'p-practice__card'クラス付きのli要素で"A1003：ノートPC"の形式で表示する。
+                </p>
+              </div>
+              <div class="p-task__item">
+                <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-2</span>
+                <p class="u-flex-1">
+                  ①次の3件のユーザーを、ユーザーID・メールアドレス・権限を持つデータとして配列にまとめる。<br />
+                  &nbsp;&nbsp;・"U0001"、"user0001@example.com"、"admin"<br />
+                  &nbsp;&nbsp;・"U0002"、"user0002@example.com"、"editor"<br />
+                  &nbsp;&nbsp;・"U0003"、"user0003@example.com"、"viewer"<br />
+                  ②'.js-emailBtn-s8'要素をクリックしたとき、メールアドレスだけを集めた新しい配列を作る。権限が"admin"のユーザーは、メールアドレスの末尾に"（管理者）"を付ける。<br />
+                  ③新しい配列の要素を'.js-emailList-s8'要素に'p-practice__card'クラス付きのli要素で表示する。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Step9 -->
+        <section class="p-section js-section">
+          <div class="p-section__title">
+            <div class="p-section__title--content">
+              <h2 class="p-section__title--top">
+                <span class="material-icons">auto_awesome</span>
+                <p>Step9: 総合演習</p>
+              </h2>
+              <span class="c-useCase">これまで学んだ配列操作を組み合わせて、注文管理画面の一覧表示・絞り込み・並び替えを自分で実装できるようになります。</span>
             </div>
             <a href="#" target="_blank" class="c-link js-tooltip" data-tooltip="解説を読む">
               <span class="material-icons">menu_book</span>
@@ -1191,95 +1458,123 @@
           <div class="p-task">
             <!-- 課題1 -->
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-1</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S9-1</span>
               <div class="p-task__contents u-flex-1">
-                <strong>カート管理</strong>
-                <div id="q8_1" class="p-practice u-mt-8">
-                  <h2 class="c-title-lesson">ショッピングカート</h2>
-                  <div class="p-practice__inner u-gap-12">
-                    <div class="p-practice__card">
-                      <input type="text" class="c-input js-cartInput-s8" placeholder="商品名を入力" />
-                      <button type="button" class="c-button-practice js-addCartBtn-s8">カートに追加</button>
-                      <button type="button" class="c-button-practice js-removeCartBtn-s8">末尾を削除</button>
-                      <div class="js-cartList-s8"></div>
-                      <p class="js-cartCount-s8"></p>
+                <strong>注文一覧の表示</strong>
+                <div id="q9_1" class="p-practice u-mt-8">
+                  <h2 class="c-title-lesson">注文一覧</h2>
+                  <div class="p-practice__inner -column -align-start -gap-16">
+                    <div class="p-practice__item">
+                      <p>.js-orderCount-s9</p>
+                      <p class="js-orderCount-s9"></p>
+                    </div>
+                    <div class="p-practice__item -column -align-start">
+                      <p>.js-orderList-s9</p>
+                      <ul class="p-practice__item -column -align-start js-orderList-s9"></ul>
                     </div>
                   </div>
                 </div>
                 <p>
-                  let cart = ["ノートPC", "マウス"]; を初期データとして使用してください。<br />
-                  ・'.js-addCartBtn-s8'をクリックしたとき、'.js-cartInput-s8'の値をpushでカートに追加し'.js-cartList-s8'に一覧表示する。<br />
-                  ・'.js-removeCartBtn-s8'をクリックしたとき、末尾の商品をpopで削除して'.js-cartList-s8'を更新する。<br />
-                  ・'.js-cartCount-s8'に常に現在のカート内の商品数を「X点」と表示する。
+                  ①次の5件の注文を、注文番号・商品名・金額・ステータスを持つデータとして配列にまとめる。<br />
+                  &nbsp;&nbsp;・"A1001"、"ノートPC"、120000円、"未発送"<br />
+                  &nbsp;&nbsp;・"A1002"、"ワイヤレスマウス"、3500円、"発送済み"<br />
+                  &nbsp;&nbsp;・"A1003"、"モニター"、32000円、"未発送"<br />
+                  &nbsp;&nbsp;・"A1004"、"USBハブ"、2800円、"発送済み"<br />
+                  &nbsp;&nbsp;・"A1005"、"キーボード"、8000円、"未発送"<br />
+                  ②ページを開いたとき、すべての注文を'.js-orderList-s9'要素に'p-practice__card'クラス付きのli要素で表示する。表示形式は"A1001｜ノートPC｜120,000円｜未発送"とし、金額は3桁ごとにカンマで区切る。<br />
+                  ③'.js-orderCount-s9'要素に、注文の件数を"全5件"の形式で表示する。
                 </p>
               </div>
             </div>
             <!-- 課題2 -->
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-2</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S9-2</span>
               <div class="p-task__contents u-flex-1">
-                <strong>キーワード検索</strong>
-                <div id="q8_2" class="p-practice u-mt-8">
-                  <h2 class="c-title-lesson">商品検索</h2>
-                  <div class="p-practice__inner u-gap-12">
-                    <div class="p-practice__card">
-                      <input type="text" class="c-input js-keywordInput-s8" placeholder="商品名を入力" />
-                      <button type="button" class="c-button-practice js-keywordBtn-s8">検索</button>
-                      <p class="js-keywordResult-s8"></p>
+                <strong>ステータスでの絞り込み</strong>
+                <div id="q9_2" class="p-practice u-mt-8">
+                  <h2 class="c-title-lesson">注文の絞り込み</h2>
+                  <div class="p-practice__inner -column -align-start -gap-16">
+                    <div class="p-practice__item">
+                      <select class="c-input js-statusSelect-s9">
+                        <option value="all">すべて</option>
+                        <option value="未発送">未発送</option>
+                        <option value="発送済み">発送済み</option>
+                      </select>
+                      <p>.js-filterCount-s9</p>
+                      <p class="js-filterCount-s9"></p>
+                    </div>
+                    <div class="p-practice__item -column -align-start">
+                      <p>.js-filterList-s9</p>
+                      <ul class="p-practice__item -column -align-start js-filterList-s9"></ul>
                     </div>
                   </div>
                 </div>
                 <p>
-                  const products = ["ノートPC", "マウス", "キーボード", "モニター", "スピーカー", "ウェブカメラ", "USBハブ"]; を使用してください。<br />
-                  '.js-keywordBtn-s8'をクリックしたとき、'.js-keywordInput-s8'に入力されたキーワードをincludesで検索し、該当する場合は"見つかりました"、見つからない場合は"該当なし"を'.js-keywordResult-s8'に表示する。
+                  ①L6-S9-1と同じ注文データを使用する。<br />
+                  ②'.js-statusSelect-s9'要素の選択が変わったとき、選択されたステータスの注文だけを'.js-filterList-s9'要素に表示し直す。表示形式はL6-S9-1と同じとする。<br />
+                  ③"すべて"が選択されたときは、全件を表示する。<br />
+                  ④'.js-filterCount-s9'要素に、表示している件数を"3件"の形式で表示する。
                 </p>
               </div>
             </div>
             <!-- 課題3 -->
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-3</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S9-3</span>
               <div class="p-task__contents u-flex-1">
-                <strong>価格集計</strong>
-                <div id="q8_3" class="p-practice u-mt-8">
-                  <h2 class="c-title-lesson">価格集計ツール</h2>
-                  <div class="p-practice__inner u-gap-12">
-                    <div class="p-practice__card">
-                      <button type="button" class="c-button-practice js-calcBtn-s8">集計する</button>
-                      <p class="js-totalPrice-s8"></p>
-                      <p class="js-maxPrice-s8"></p>
+                <strong>金額での並び替え</strong>
+                <div id="q9_3" class="p-practice u-mt-8">
+                  <h2 class="c-title-lesson">注文の並び替え</h2>
+                  <div class="p-practice__inner -column -align-start -gap-16">
+                    <div class="p-practice__item">
+                      <button type="button" class="c-button-practice js-sortHigh-s9">金額が高い順</button>
+                      <button type="button" class="c-button-practice js-sortLow-s9">金額が安い順</button>
+                    </div>
+                    <div class="p-practice__item -column -align-start">
+                      <p>.js-sortList-s9</p>
+                      <ul class="p-practice__item -column -align-start js-sortList-s9"></ul>
                     </div>
                   </div>
                 </div>
                 <p>
-                  const items = [{ name: "ノートPC", price: 89000 }, { name: "マウス", price: 2500 }, { name: "キーボード", price: 8000 }, { name: "モニター", price: 45000 }, { name: "スピーカー",
-                  price: 12000 }]; を使用してください。<br />
-                  '.js-calcBtn-s8'をクリックしたとき、forEachで配列を処理して<br />
-                  ・合計金額を'.js-totalPrice-s8'に「合計：X円」と表示する。<br />
-                  ・最も高い商品名と価格を'.js-maxPrice-s8'に「最高額：商品名（X円）」と表示する。
+                  ①L6-S9-1と同じ注文データを使用する。<br />
+                  ②'.js-sortHigh-s9'要素をクリックしたとき、金額が高い順に並べて'.js-sortList-s9'要素に表示し直す。<br />
+                  ③'.js-sortLow-s9'要素をクリックしたとき、金額が安い順に並べて'.js-sortList-s9'要素に表示し直す。<br />
+                  ④表示形式はL6-S9-1と同じとし、並び替えたあとも元の注文データの順番は変わらないようにする。
                 </p>
               </div>
             </div>
             <!-- 課題4 -->
             <div class="p-task__item">
-              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S8-4</span>
+              <span class="c-tag js-tooltip" data-tooltip="問題番号をコピー" data-copy>L6-S9-4</span>
               <div class="p-task__contents u-flex-1">
-                <strong>タグ管理</strong>
-                <div id="q8_4" class="p-practice u-mt-8">
-                  <h2 class="c-title-lesson">タグ管理システム</h2>
-                  <div class="p-practice__inner u-gap-12">
-                    <div class="p-practice__card">
-                      <input type="text" class="c-input js-tagInput-s8" placeholder="タグ名を入力" />
-                      <button type="button" class="c-button-practice js-addTagBtn-s8">タグを追加</button>
-                      <p class="js-tagMessage-s8"></p>
-                      <p class="js-tagList-s8"></p>
+                <strong>商品タグの登録</strong>
+                <div id="q9_4" class="p-practice u-mt-8">
+                  <h2 class="c-title-lesson">商品タグ管理</h2>
+                  <div class="p-practice__inner -column -align-start -gap-16">
+                    <div class="p-practice__item">
+                      <input type="text" class="c-input js-tagInput-s9" placeholder="タグ名を入力" />
+                      <button type="button" class="c-button-practice js-addTag-s9">タグを追加</button>
+                      <button type="button" class="c-button-practice js-removeTag-s9">最後のタグを削除</button>
+                    </div>
+                    <div class="p-practice__item">
+                      <p>.js-tagList-s9</p>
+                      <p class="js-tagList-s9"></p>
+                    </div>
+                    <div class="p-practice__item">
+                      <p>.js-tagMessage-s9</p>
+                      <p class="js-tagMessage-s9"></p>
                     </div>
                   </div>
                 </div>
                 <p>
-                  let tags = []; を初期データとして使用してください。<br />
-                  '.js-addTagBtn-s8'をクリックしたとき<br />
-                  ・includesで重複チェックを行い、すでに存在する場合は'.js-tagMessage-s8'に"すでに追加されています"と表示して処理を止める。<br />
-                  ・重複がなければpushで追加し、joinで"　#"区切りにして'.js-tagList-s8'に表示する。
+                  ①"セール"の1件を初期データとして、タグの配列を用意する。<br />
+                  ②タグは先頭に"#"を付け、半角スペース区切りで'.js-tagList-s9'要素に表示する（例："#セール #送料無料"）。ページを開いたときと、追加・削除のたびに表示を更新する。<br />
+                  ③'.js-addTag-s9'要素をクリックしたとき、'.js-tagInput-s9'要素の値をタグとして配列に追加する。ただし、次の場合は'.js-tagMessage-s9'要素にメッセージを表示して追加しない。<br />
+                  &nbsp;&nbsp;・入力が空の場合："タグを入力してください"<br />
+                  &nbsp;&nbsp;・同じタグがすでにある場合："すでに追加されています"<br />
+                  &nbsp;&nbsp;・タグがすでに5件ある場合："タグは5件まで登録できます"<br />
+                  ④追加できたときは、'.js-tagMessage-s9'要素と入力欄を空にする。<br />
+                  ⑤'.js-removeTag-s9'要素をクリックしたとき、最後に追加したタグを削除する。
                 </p>
               </div>
             </div>
